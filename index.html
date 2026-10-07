@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=202610071440">
+<link rel="stylesheet" href="styles.css?v=20261007145232">
 </head>
 <body>
 
@@ -31,15 +31,15 @@
   <section class="rank" aria-labelledby="rank-h">
     <div class="sec-head">
       <div>
-        <h2 id="rank-h">Скільки коштує поїздка на одну людину</h2>
-        <p class="sub">Частка житла (поділена на шістьох) плюс квиток туди й назад. Натисніть на місто, щоб побачити деталі.</p>
+        <h2 id="rank-h">Куди найкраще їхати саме нам</h2>
+        <p class="sub">Оцінка поїздки = 60% NY Experience + 20% логістика + 20% ціна. Натисніть на місто, щоб побачити, з чого складається оцінка.</p>
       </div>
-      <div class="seg" role="group" aria-label="Як рахувати житло">
-        <button type="button" id="mode-min" aria-pressed="true">Найдешевше житло</button>
-        <button type="button" id="mode-avg" aria-pressed="false">Середня ціна</button>
+      <div class="seg" role="group" aria-label="Сортування">
+        <button type="button" id="sort-score" aria-pressed="true">Найкраще для нас</button>
+        <button type="button" id="sort-price" aria-pressed="false">Найдешевше</button>
       </div>
     </div>
-    <div class="legend"><span><i class="sw house"></i>житло</span><span><i class="sw road"></i>дорога</span></div>
+    <div class="legend"><span><i class="sw ny"></i>NY Experience</span><span><i class="sw lg"></i>логістика</span><span><i class="sw pr"></i>ціна</span></div>
     <div class="tickets" id="tickets"></div>
   </section>
 
@@ -47,6 +47,13 @@
   <div id="cities"></div>
 
   <section class="notes" aria-label="Як рахували">
+    <div class="method">
+      <h3>Як рахується оцінка</h3>
+      <p><b>Оцінка поїздки</b> = 60% NY Experience + 20% логістика + 20% ціна.</p>
+      <p><b>NY Experience (100):</b> святкування 31.12 (25), святкова атмосфера (20), nightlife (15), унікальність (10), що робити всі 8 днів (10), підтверджені офіційні події (10), погода (5), комфорт і натовпи (5). Бали виставлено за офіційними сайтами міст і організаторів та за минулими святкуваннями.</p>
+      <p><b>Логістика (100):</b> час у дорозі (35), кількість пересадок (25), нічні переїзди (15), ризик стикувань (15), зручність прибуття й виїзду (10). Перші три рахуються лінійно між найкращим і найгіршим містом. За ризик знімається 2 бали за кожну пересадку FlixBus в одному квитку і 5 балів за самостійну пересадку автобус↔літак. За прибуття чи виїзд уночі, вечірнє прибуття 28.12, виїзд 26.12 або повернення 07.01 теж знімаються бали.</p>
+      <p><b>Ціна (100):</b> найдешевше місто отримує 100, решта пропорційно: 100 × найнижча ціна / ціна міста на людину.</p>
+    </div>
     <div>
       <h3>Як відбирали житло</h3>
       <p>Ціле житло для 6 гостей, від 2 спалень і з 6 спальними місцями. Двоспальне ліжко чи диван рахуються як 2 місця. До центру не більше 9 км. Рейтинг на Booking від 7.0, на Airbnb від 4.6, щонайменше 5 відгуків.</p>
@@ -63,9 +70,10 @@
   </section>
 </main>
 
-<script src="data/stays.js?v=202610071440"></script>
-<script src="data/transport.js?v=202610071440"></script>
-<script src="data/city-photos.js?v=202610071440"></script>
-<script src="app.js?v=202610071440"></script>
+<script src="data/stays.js?v=20261007145232"></script>
+<script src="data/transport.js?v=20261007145232"></script>
+<script src="data/ny-experience.js?v=20261007145232"></script>
+<script src="data/city-photos.js?v=20261007145232"></script>
+<script src="app.js?v=20261007145232"></script>
 </body>
 </html>

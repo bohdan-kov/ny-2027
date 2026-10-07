@@ -1,6 +1,7 @@
 const DATA = window.STAYS;
 const T = window.TRANSPORT;
 const PH = window.CITY_PHOTOS || {};
+const NYX = window.NY_EXPERIENCE || {};
 const ORDER = Object.keys(T);
 ORDER.forEach(c => { T[c].total = [...T[c].out, ...T[c].back].reduce((s, l) => s + l[3], 0); });
 
@@ -9,7 +10,39 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const staysOf = c => [...DATA[c].airbnb, ...DATA[c].booking];
 const minPrice = c => Math.min(...staysOf(c).map(x => x.price));
 const housing = (c, mode) => mode === 'avg' ? DATA[c].mean : minPrice(c);
-ORDER.sort((a, b) => (minPrice(a) / 6 + T[a].total) - (minPrice(b) / 6 + T[b].total));
+const perPerson = c => minPrice(c) / 6 + T[c].total;
+
+/* ---------- Оцінка поїздки ----------
+   Overall = 60% NY Experience + 20% Logistics + 20% Price */
+const NY_CRIT = [
+  ['nye', 'Святкування 31.12', 25], ['atmosphere', 'Святкова атмосфера', 20], ['nightlife', 'Nightlife', 15],
+  ['uniqueness', 'Унікальність', 10], ['eight_days', 'Що робити 8 днів', 10], ['official_events', 'Офіційні події', 10],
+  ['weather', 'Погода', 5], ['comfort', 'Комфорт і натовпи', 5]
+];
+const LOG_CRIT = [
+  ['hours', 'Час у дорозі', 35], ['transfers', 'Пересадки', 25], ['nights', 'Нічні переїзди', 15],
+  ['risk', 'Ризик стикувань', 15], ['conv', 'Прибуття й виїзд', 10]
+];
+const lin = (v, best, worst, hi, lo) => best === worst ? hi : hi - (v - best) / (worst - best) * (hi - lo);
+const LG = ORDER.map(c => T[c].logi);
+const RANGE = k => [Math.min(...LG.map(l => l[k])), Math.max(...LG.map(l => l[k]))];
+const [hMin, hMax] = RANGE('hours'), [tMin, tMax] = RANGE('transfers'), [nMin, nMax] = RANGE('nights');
+const cheapestPP = Math.min(...ORDER.map(perPerson));
+const r1 = x => Math.round(x * 10) / 10;
+
+const SCORE = {};
+ORDER.forEach(c => {
+  const l = T[c].logi, ny = (NYX[c] || {}).scores || {};
+  const logParts = {
+    hours: lin(l.hours, hMin, hMax, 35, 5), transfers: lin(l.transfers, tMin, tMax, 25, 5),
+    nights: lin(l.nights, nMin, nMax, 15, 5), risk: l.risk, conv: l.conv
+  };
+  const nyTotal = NY_CRIT.reduce((s, [k]) => s + (ny[k] || 0), 0);
+  const logTotal = Object.values(logParts).reduce((s, v) => s + v, 0);
+  const price = 100 * cheapestPP / perPerson(c);
+  SCORE[c] = { ny, nyTotal, logParts, logTotal, price, overall: .6 * nyTotal + .2 * logTotal + .2 * price };
+});
+ORDER.sort((a, b) => SCORE[b].overall - SCORE[a].overall);
 
 const ICON = {
   bus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 18v2M16 18v2"/><circle cx="8" cy="14.5" r=".8" fill="currentColor"/><circle cx="16" cy="14.5" r=".8" fill="currentColor"/></svg>',
@@ -19,31 +52,33 @@ const ICON = {
 };
 
 /* ---------- Рейтинг ---------- */
-let mode = 'min';
-try { mode = localStorage.getItem('ny27-mode') || 'min'; } catch (e) {}
+let sortBy = 'score';
+try { sortBy = localStorage.getItem('ny27-sort') || 'score'; } catch (e) {}
 
+function miniBar(label, v, cls) {
+  return `<div class="mb"><span class="mb-l">${label}</span><span class="mb-t"><i class="${cls}" style="width:${Math.max(0, Math.min(100, v))}%"></i></span><b>${Math.round(v)}</b></div>`;
+}
 function renderTickets() {
-  const rows = ORDER.map(c => { const h = housing(c, mode) / 6; return { c, h, r: T[c].total, t: h + T[c].total }; })
-    .sort((a, b) => a.t - b.t);
-  const max = Math.max(...rows.map(r => r.t));
-  document.getElementById('tickets').innerHTML = rows.map((r, i) => `
-    <button type="button" class="ticket${i === 0 ? ' first' : ''}" data-city="${r.c}" aria-label="${T[r.c].ua}: ${fmt(r.t)} на людину">
+  const rows = [...ORDER].sort((a, b) => sortBy === 'price' ? perPerson(a) - perPerson(b) : SCORE[b].overall - SCORE[a].overall);
+  document.getElementById('tickets').innerHTML = rows.map((c, i) => {
+    const s = SCORE[c];
+    return `<button type="button" class="ticket${i === 0 ? ' first' : ''}" data-city="${c}" aria-label="${T[c].ua}: оцінка ${Math.round(s.overall)} зі 100, ${fmt(perPerson(c))} на людину">
       <div class="t-top">
-        <div class="t-name">${PH[r.c] ? `<img class="t-thumb" src="${PH[r.c].img}" alt="" loading="lazy">` : ''}<div><div class="t-rank">№ ${i + 1}</div><div class="t-city">${T[r.c].ua}</div><div class="t-cc">${T[r.c].cc}</div></div></div>
-        ${i === 0 ? '<span class="t-badge">найвигідніше</span>' : ''}
+        <div class="t-name">${PH[c] ? `<img class="t-thumb" src="${PH[c].img}" alt="" loading="lazy">` : ''}<div><div class="t-rank">№ ${i + 1}</div><div class="t-city">${T[c].ua}</div><div class="t-cc">${T[c].cc}</div></div></div>
+        ${i === 0 ? `<span class="t-badge">${sortBy === 'price' ? 'найдешевше' : 'найкраще для нас'}</span>` : ''}
       </div>
-      <div class="t-total"><b>${fmt(r.t)}</b><span>на людину</span></div>
-      <div class="bar" aria-hidden="true"><span style="width:${r.h / max * 100}%;background:var(--house)"></span><span style="width:${r.r / max * 100}%;background:var(--road)"></span></div>
-      <div class="t-split"><span>житло <b>${fmt(r.h)}</b></span><span>дорога <b>${fmt(r.r)}</b></span></div>
-      <div class="t-time">${ICON.clock}${T[r.c].hours} в один бік</div>
-    </button>`).join('');
+      <div class="t-total"><b>${Math.round(s.overall)}<small>/100</small></b><span>оцінка поїздки</span></div>
+      <div class="mbs">${miniBar('NY', s.nyTotal, 'ny')}${miniBar('Логістика', s.logTotal, 'lg')}${miniBar('Ціна', s.price, 'pr')}</div>
+      <div class="t-split"><span><b>${fmt(perPerson(c))}</b> на людину</span><span class="t-time">${ICON.clock}${T[c].hours}</span></div>
+    </button>`;
+  }).join('');
   document.querySelectorAll('.ticket').forEach(b => b.addEventListener('click', () =>
     document.getElementById('c-' + b.dataset.city).scrollIntoView()));
-  document.getElementById('mode-min').setAttribute('aria-pressed', mode === 'min');
-  document.getElementById('mode-avg').setAttribute('aria-pressed', mode === 'avg');
+  document.getElementById('sort-score').setAttribute('aria-pressed', sortBy === 'score');
+  document.getElementById('sort-price').setAttribute('aria-pressed', sortBy === 'price');
 }
-['min', 'avg'].forEach(m => document.getElementById('mode-' + m).addEventListener('click', () => {
-  mode = m; try { localStorage.setItem('ny27-mode', m); } catch (e) {} renderTickets();
+['score', 'price'].forEach(m => document.getElementById('sort-' + m).addEventListener('click', () => {
+  sortBy = m; try { localStorage.setItem('ny27-sort', m); } catch (e) {} renderTickets();
 }));
 
 /* ---------- Міста ---------- */
@@ -81,6 +116,41 @@ function wizzTable(rows) {
   </table></div><p class="wizz-note">Ціна за 1 особу, лише маленька сумка під сидіння. Дані з календаря цін wizzair.com на 07.10.2026.</p></details>`;
 }
 
+const STATUS = { confirmed: ['підтверджено', 'ok'], recurring: ['щороку', 'rec'], uncertain: ['під питанням', 'warn'] };
+function critRows(list, vals, cls) {
+  return list.map(([k, label, max]) => {
+    const v = vals[k] || 0;
+    return `<li><span class="cr-l">${label}</span><span class="cr-t"><i class="${cls}" style="width:${v / max * 100}%"></i></span><span class="cr-v">${r1(v)}<small>/${max}</small></span></li>`;
+  }).join('');
+}
+function scoreCard(c) {
+  const s = SCORE[c], x = NYX[c] || {}, l = T[c].logi;
+  return `<div class="score">
+    <div class="sc-col">
+      <div class="sc-head"><h3>NY Experience</h3><b>${Math.round(s.nyTotal)}<small>/100</small></b></div>
+      <ul class="crit">${critRows(NY_CRIT, s.ny, 'ny')}</ul>
+    </div>
+    <div class="sc-col">
+      <div class="sc-head"><h3>Логістика</h3><b>${Math.round(s.logTotal)}<small>/100</small></b></div>
+      <ul class="crit">${critRows(LOG_CRIT, s.logParts, 'lg')}</ul>
+      <p class="sc-note">${l.hours} год у дорозі туди й назад · пересадок: ${l.transfers} · ночей у дорозі: ${l.nights}. ${l.note.charAt(0).toUpperCase() + l.note.slice(1)}.</p>
+      <div class="sc-head sc-price"><h3>Ціна</h3><b>${Math.round(s.price)}<small>/100</small></b></div>
+      <p class="sc-note">${fmt(perPerson(c))} на людину. Найдешевше місто отримує 100, інші пропорційно: 100 × ${fmt(cheapestPP)} / ціна міста.</p>
+    </div>
+    <div class="sc-col sc-ny">
+      <h3>Новий рік тут</h3>
+      ${x.summary_uk ? `<p class="lead-s">${esc(x.summary_uk)}</p>` : ''}
+      <dl>
+        ${x.nye_uk ? `<dt>31 грудня</dt><dd>${esc(x.nye_uk)}</dd>` : ''}
+        ${x.markets_uk ? `<dt>Ярмарки й ілюмінації</dt><dd>${esc(x.markets_uk)}</dd>` : ''}
+        ${x.weather_uk ? `<dt>Погода</dt><dd>${esc(x.weather_uk)}</dd>` : ''}
+        ${x.risks_uk ? `<dt>Зверніть увагу</dt><dd>${esc(x.risks_uk)}</dd>` : ''}
+      </dl>
+      ${(x.events || []).length ? `<ul class="events">${x.events.map(ev => { const st = STATUS[ev.status] || STATUS.uncertain; return `<li><span class="ev-d">${esc(ev.date)}</span>${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.name)}</a>` : esc(ev.name)}<span class="st ${st[1]}">${st[0]}</span></li>`; }).join('')}</ul>` : ''}
+    </div>
+  </div>`;
+}
+
 function renderCities() {
   document.getElementById('nav').innerHTML = ORDER.map(c => `<a href="#c-${c}" data-city="${c}">${T[c].ua}</a>`).join('');
   document.getElementById('cities').innerHTML = ORDER.map((c, i) => {
@@ -93,6 +163,7 @@ function renderCities() {
           <h2 id="h-${c}">${t.ua}</h2>
           <div class="city-cc">${t.cc} · проаналізовано ${d.n} оголошень</div>
         </div>
+        <div class="cover-score"><b>${Math.round(SCORE[c].overall)}</b><span>оцінка<br>поїздки</span></div>
         ${PH[c] ? `<a class="credit" href="${PH[c].source}" target="_blank" rel="noopener">Фото: ${esc(PH[c].author)}, ${PH[c].license}</a>` : ''}
       </div>
       <div class="kpis">
@@ -101,6 +172,7 @@ function renderCities() {
         <div class="kpi"><b>${fmt(t.total)}</b><span>дорога з особи</span></div>
         <div class="kpi hl"><b>${fmt(minP / 6 + t.total)}</b><span>разом на людину</span></div>
       </div>
+      ${scoreCard(c)}
       <div class="stays">${stays.map(x => stayCard(x, x.price === minP)).join('')}</div>
       <div class="route">
         <div class="route-head"><h3>Дорога з Києва</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію</span></div>
