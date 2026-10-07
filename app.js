@@ -146,7 +146,7 @@ function scoreCard(c) {
         ${x.weather_uk ? `<dt>Погода</dt><dd>${esc(x.weather_uk)}</dd>` : ''}
         ${x.risks_uk ? `<dt>Зверніть увагу</dt><dd>${esc(x.risks_uk)}</dd>` : ''}
       </dl>
-      ${(x.events || []).length ? `<ul class="events">${x.events.map(ev => { const st = STATUS[ev.status] || STATUS.uncertain; return `<li><span class="ev-d">${esc(ev.date)}</span>${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.name)}</a>` : esc(ev.name)}<span class="st ${st[1]}">${st[0]}</span></li>`; }).join('')}</ul>` : ''}
+      ${(x.events || []).length ? `<ul class="events">${x.events.map(ev => { const st = STATUS[ev.status] || STATUS.uncertain; return `<li><div class="ev-main"><span class="ev-d">${esc(ev.date)}</span>${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.name)}</a>` : `<span>${esc(ev.name)}</span>`}</div><span class="st ${st[1]}">${st[0]}</span></li>`; }).join('')}</ul>` : ''}
     </div>
   </div>`;
 }

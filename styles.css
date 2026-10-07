@@ -235,10 +235,12 @@ i.ny{background:var(--ny)} i.lg{background:var(--lg)} i.pr{background:var(--pr)}
 .sc-ny dt{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .sc-ny dd{margin:0 0 4px;font-size:13.5px}
 .events{list-style:none;margin:0;padding:0;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:12px}
-.events li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:8px;align-items:baseline;font-size:13px}
+.events{gap:10px}
+.events li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;font-size:13px}
+.ev-main{min-width:0;display:grid;gap:1px}
 .events a{color:var(--ink);text-decoration-color:var(--line)}
 .events a:hover{color:var(--pine)}
-.ev-d{font-weight:600;color:var(--muted);white-space:nowrap}
+.ev-d{font-size:11.5px;font-weight:600;color:var(--muted);overflow-wrap:anywhere}
 .st{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
 .st.ok{background:var(--pine-soft);color:var(--pine)}
 .st.rec{background:var(--gold-soft);color:var(--gold-ink)}
