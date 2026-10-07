@@ -1,6 +1,6 @@
 import json,re,math,statistics as st,sys
 a=json.load(open('data/raw/airbnb.json')); b=json.load(open('data/raw/booking.json'))
-C={'paris':(48.8566,2.3522),'vienna':(48.2082,16.3738),'prague':(50.0875,14.4213),'brno':(49.1951,16.6068),'berlin':(52.52,13.405),'budapest':(47.4979,19.0402),'naples':(40.8518,14.2681),'strasbourg':(48.5734,7.7521)}
+C={'paris':(48.8566,2.3522),'vienna':(48.2082,16.3738),'prague':(50.0875,14.4213),'brno':(49.1951,16.6068),'berlin':(52.52,13.405),'budapest':(47.4979,19.0402),'naples':(40.8518,14.2681),'strasbourg':(48.5734,7.7521),'salzburg':(47.8095,13.0550),'ljubljana':(46.0511,14.5051),'zagreb':(45.8131,15.9775),'tallinn':(59.4370,24.7536),'riga':(56.9496,24.1052),'munich':(48.1374,11.5755)}
 def km(p,q):
     R=6371;la1,lo1,la2,lo2=map(math.radians,(*p,*q))
     return 2*R*math.asin(math.sqrt(math.sin((la2-la1)/2)**2+math.cos(la1)*math.cos(la2)*math.sin((lo2-lo1)/2)**2))

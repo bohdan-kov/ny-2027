@@ -1,6 +1,6 @@
 # Новий рік 2027: вибір міста
 
-Порівняння 8 міст для поїздки 6 людей з Києва на 28.12.2026–05.01.2027 (8 ночей): житло з Airbnb і Booking, середні ціни та найдешевші маршрути.
+Порівняння 14 міст для поїздки 6 людей з Києва на 28.12.2026–05.01.2027 (8 ночей): житло з Airbnb і Booking, середні ціни та найдешевші маршрути.
 
 ## Як відкрити
 
@@ -33,7 +33,7 @@ scripts/            скрипти збору даних
 1. Airbnb: `python3 scripts/airbnb.py data/raw/airbnb.json` (≈10 хв).
 2. Booking збирався через Playwright, результат у `data/raw/booking.json`.
 3. Відбір і середні ціни: `python3 scripts/select.py`, результат у `data/raw/selected.json`.
-4. Транспорт: `bash scripts/ryanair.sh`, `bash scripts/flixbus_*.sh`. Ціни Wizz Air беруться з календаря цін на wizzair.com через браузер (Playwright), бо пошук рейсів закритий антибот-захистом. Знайдені рейси вручну внесіть у `data/transport.js`.
+4. Транспорт: `bash scripts/ryanair.sh`, `bash scripts/ryanair_new_cities.sh`, `bash scripts/flixbus_*.sh`. Ціни Wizz Air беруться з календаря цін на wizzair.com через браузер (Playwright), бо пошук рейсів закритий антибот-захистом. Знайдені рейси вручну внесіть у `data/transport.js`.
 
 ## Критерії відбору житла
 

@@ -1,6 +1,8 @@
 import re,json,sys,base64,subprocess,urllib.parse,time
 OUT=sys.argv[1]
-CITIES={"paris":"Paris--France","vienna":"Vienna--Austria","prague":"Prague--Czechia","brno":"Brno--Czechia","berlin":"Berlin--Germany","budapest":"Budapest--Hungary","naples":"Naples--Italy","strasbourg":"Strasbourg--France"}
+CITIES={"paris":"Paris--France","vienna":"Vienna--Austria","prague":"Prague--Czechia","brno":"Brno--Czechia","berlin":"Berlin--Germany","budapest":"Budapest--Hungary","naples":"Naples--Italy","strasbourg":"Strasbourg--France","salzburg":"Salzburg--Austria","ljubljana":"Ljubljana--Slovenia","zagreb":"Zagreb--Croatia","tallinn":"Tallinn--Estonia","riga":"Riga--Latvia","munich":"Munich--Germany"}
+# Опційно: python3 airbnb.py out.json salzburg riga …  — лише вказані міста
+if len(sys.argv)>2: CITIES={k:v for k,v in CITIES.items() if k in sys.argv[2:]}
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 def find(o,k):
     if isinstance(o,dict):

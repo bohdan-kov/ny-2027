@@ -1,5 +1,4 @@
-// Згенеровано scripts/select.py — житло по містах
-window.STAYS = {
+{
  "paris": {
   "n": 237,
   "mean": 3673,
@@ -17,7 +16,7 @@ window.STAYS = {
     "dist": 7.3,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1006387429997855411?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/paris-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/3e2e24f8-3731-4151-a7d4-c6e7ee701c2a.jpg"
    },
    {
     "src": "Airbnb",
@@ -30,7 +29,7 @@ window.STAYS = {
     "dist": 5.8,
     "info": "3 bedrooms · 4 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1067382897591409072?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/paris-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-1067382897591409072/original/8e0d9d9b-b00f-439a-baca-07d848d9bd94.jpeg"
    }
   ],
   "booking": [
@@ -45,7 +44,7 @@ window.STAYS = {
     "dist": 3.4,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 40 m² | 3 beds (1 double, 2 sofa beds)",
     "url": "https://www.booking.com/hotel/fr/entire-apartment-for-6-people.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/paris-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/402169769.webp"
    },
    {
     "src": "Booking",
@@ -58,7 +57,7 @@ window.STAYS = {
     "dist": 5.4,
     "info": "Apartment | Entire apartment • 2 bedrooms • 1 living room • 2 bathrooms • 1 kitchen • 75 m² | 4 beds (2 singles, 1 double, 1 sofa bed)",
     "url": "https://www.booking.com/hotel/fr/spacious-flat-for-6-paris-expo-porte-de-versailles.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/paris-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/831887842.webp"
    }
   ]
  },
@@ -79,7 +78,7 @@ window.STAYS = {
     "dist": 6.6,
     "info": "2 bedrooms · 3 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1433430959137757356?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/vienna-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-1433430959137757356/original/998fe881-9441-4900-b527-1115f3b10e47.jpeg"
    },
    {
     "src": "Airbnb",
@@ -92,7 +91,7 @@ window.STAYS = {
     "dist": 4.7,
     "info": "2 bedrooms · 3 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1400156094354250098?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/vienna-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1400156094354250098/original/127e7c36-9cfe-4dae-808a-d5bc26b5512a.jpeg"
    }
   ],
   "booking": [
@@ -107,7 +106,7 @@ window.STAYS = {
     "dist": 3.4,
     "info": "Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 101 m² | 4 beds (1 sofa bed, 3 large doubles)",
     "url": "https://www.booking.com/hotel/at/2-zimmer-leisure-suite.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/vienna-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/446719690.webp"
    },
    {
     "src": "Booking",
@@ -120,7 +119,7 @@ window.STAYS = {
     "dist": 4.3,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/at/modern-2br-18-min-to-center-smart-tv.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/vienna-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/853687623.webp"
    }
   ]
  },
@@ -141,7 +140,7 @@ window.STAYS = {
     "dist": 2.0,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/655087482105671706?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/prague-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-655087482105671706/original/e6019220-c263-4c39-bb11-6a4be84ac888.jpeg"
    },
    {
     "src": "Airbnb",
@@ -154,7 +153,7 @@ window.STAYS = {
     "dist": 6.9,
     "info": "3 bedrooms · 5 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/49706394?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/prague-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/70267b78-e7ea-4b38-b05a-66d3fdfe0b45.jpg"
    }
   ],
   "booking": [
@@ -169,7 +168,7 @@ window.STAYS = {
     "dist": 1.6,
     "info": "Three-Bedroom Apartment | Entire apartment • 3 bedrooms • 2 bathrooms • 1 kitchen • 80 m² | 7 single beds",
     "url": "https://www.booking.com/hotel/cz/apartments-rehorova-30.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/prague-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/875609368.webp"
    },
    {
     "src": "Booking",
@@ -182,7 +181,7 @@ window.STAYS = {
     "dist": 2.9,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 50 m² | 6 beds (3 singles, 2 doubles, 1 sofa bed)",
     "url": "https://www.booking.com/hotel/cz/erbenova-apartments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/prague-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/440966529.webp"
    }
   ]
  },
@@ -203,7 +202,7 @@ window.STAYS = {
     "dist": 0.9,
     "info": "2 bedrooms · 5 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/28765550?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/brno-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/c913f364-068a-493c-abbe-688ff8c0f08a.jpg"
    },
    {
     "src": "Airbnb",
@@ -216,7 +215,7 @@ window.STAYS = {
     "dist": 2.4,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1444886952683589349?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/brno-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-1444886952683589349/original/2db39c89-9641-4cc1-9a02-21abaf420d8c.jpeg"
    }
   ],
   "booking": [
@@ -231,7 +230,7 @@ window.STAYS = {
     "dist": 0.7,
     "info": "Two-Bedroom Loft Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/cz/industrial-lofts-centrum.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/brno-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/680596955.webp"
    },
    {
     "src": "Booking",
@@ -244,7 +243,7 @@ window.STAYS = {
     "dist": 0.7,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 3 living rooms • 1 bathroom • 1 kitchen • 55 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/cz/loft-apartments-centrum.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/brno-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/568833214.webp"
    }
   ]
  },
@@ -265,7 +264,7 @@ window.STAYS = {
     "dist": 3.4,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/45998917?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/berlin-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/8220bd33-d3e4-4d1e-90a9-58de52541df1.jpg"
    },
    {
     "src": "Airbnb",
@@ -278,7 +277,7 @@ window.STAYS = {
     "dist": 8.1,
     "info": "2 bedrooms · 8 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1126044300318752074?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/berlin-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1126044300318752074/original/6d35c4d5-1ed6-4655-a8f1-283e6f6dfb9c.jpeg"
    }
   ],
   "booking": [
@@ -293,7 +292,7 @@ window.STAYS = {
     "dist": 8.9,
     "info": "Three-Bedroom Apartment with Park View | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 90 m² | 3 beds (2 bunk beds, 1 large double)",
     "url": "https://www.booking.com/hotel/de/vyld-vault-berlin-nahe-spree-grosszugig-amp-ruhig.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/berlin-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/810759059.webp"
    },
    {
     "src": "Booking",
@@ -306,7 +305,7 @@ window.STAYS = {
     "dist": 5.2,
     "info": "Two-Bedroom Deluxe Apartment | Entire apartment • 2 bedrooms • 1 bathroom • 54 m² | 4 beds (2 sofa beds, 2 large doubles)",
     "url": "https://www.booking.com/hotel/de/jomi-stays-brandenburgische-strasse-16.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/berlin-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/609002825.webp"
    }
   ]
  },
@@ -327,7 +326,7 @@ window.STAYS = {
     "dist": 2.3,
     "info": "2 bedrooms · 3 beds",
     "url": "https://www.airbnb.com.ua/rooms/18506299?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/budapest-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/e526e9d1-1744-4541-8824-737259ed77e2.jpg"
    },
    {
     "src": "Airbnb",
@@ -340,7 +339,7 @@ window.STAYS = {
     "dist": 1.0,
     "info": "3 bedrooms · 4 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1415859595690891541?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/budapest-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1415859595690891541/original/c187d6cc-5692-4e29-90a2-f7c3bd18099e.jpeg"
    }
   ],
   "booking": [
@@ -355,7 +354,7 @@ window.STAYS = {
     "dist": 1.5,
     "info": "Deluxe Apartment | Entire apartment • 2 bedrooms • 1 bathroom • 1 kitchen • 55 m² | 3 beds (2 doubles, 1 sofa bed)",
     "url": "https://www.booking.com/hotel/hu/kiraly-street-apartments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/budapest-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/255929141.webp"
    },
    {
     "src": "Booking",
@@ -368,7 +367,7 @@ window.STAYS = {
     "dist": 0.2,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/hu/new-faces-design-apartment-in-downtown.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/budapest-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/516376756.webp"
    }
   ]
  },
@@ -389,7 +388,7 @@ window.STAYS = {
     "dist": 1.3,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1047067993591189597?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/naples-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1047067993591189597/original/f8962369-b221-4ab2-89e5-90eca4390353.jpeg"
    },
    {
     "src": "Airbnb",
@@ -402,7 +401,7 @@ window.STAYS = {
     "dist": 3.7,
     "info": "2 bedrooms · 3 beds · 2 baths",
     "url": "https://www.airbnb.com.ua/rooms/781242802108937131?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/naples-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/f4b5afe9-38f8-4959-9009-b0e70f0c4f6f.jpg"
    }
   ],
   "booking": [
@@ -417,7 +416,7 @@ window.STAYS = {
     "dist": 2.1,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom | 4 beds (2 singles, 1 sofa bed, 1 large double)",
     "url": "https://www.booking.com/hotel/it/la-casa-dei-nonni-family-apartment-high-comfort-and-quality.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/naples-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/785748370.webp"
    },
    {
     "src": "Booking",
@@ -430,7 +429,7 @@ window.STAYS = {
     "dist": 6.1,
     "info": "Three-Bedroom Apartment with View | Entire apartment • 3 bedrooms • 1 living room • 2 bathrooms • 1 kitchen • 120 m² | 3 large double beds",
     "url": "https://www.booking.com/hotel/it/casa-vacanze-residenziale.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/naples-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/643874529.webp"
    }
   ]
  },
@@ -451,7 +450,7 @@ window.STAYS = {
     "dist": 4.8,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1286879244487552082?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/strasbourg-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1286879244487552082/original/eec774d7-35ac-461b-837b-0c358ce1b8c4.jpeg"
    },
    {
     "src": "Airbnb",
@@ -464,7 +463,7 @@ window.STAYS = {
     "dist": 5.0,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1205810379322666454?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/strasbourg-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1205810379322666454/original/fa8e9476-3624-4f95-9d10-4ea49730ed4b.jpeg"
    }
   ],
   "booking": [
@@ -479,7 +478,7 @@ window.STAYS = {
     "dist": 4.0,
     "info": "Three-Bedroom Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 72 m² | 4 beds (1 double, 2 sofa beds, 1 large double)",
     "url": "https://www.booking.com/hotel/fr/pretty-4-room-apartment-in-a-quiet-area-3-bedrooms.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/strasbourg-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/678575737.webp"
    },
    {
     "src": "Booking",
@@ -492,7 +491,7 @@ window.STAYS = {
     "dist": 1.1,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 120 m² | 4 beds (1 single, 1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/fr/le-molsheim-grand-appartement-proche-musee-dart-moderne.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/strasbourg-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/503387920.webp"
    }
   ]
  },
@@ -513,7 +512,7 @@ window.STAYS = {
     "dist": 8.6,
     "info": "3 bedrooms · 4 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/952092124290024038?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/salzburg-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-952092124290024038/original/46cd7643-302d-41cf-8b05-c9fe9e559723.jpeg"
    },
    {
     "src": "Airbnb",
@@ -526,7 +525,7 @@ window.STAYS = {
     "dist": 8.0,
     "info": "4 bedrooms · 4 beds · 3.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/51296635?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/salzburg-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/5b97724f-6b58-419d-91c2-7d99941c5fc3.jpg"
    }
   ],
   "booking": [
@@ -541,7 +540,7 @@ window.STAYS = {
     "dist": 1.8,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 3 beds (2 sofa beds, 1 large double)",
     "url": "https://www.booking.com/hotel/at/holiday-apartments-by-das-grune-zur-post-100-bio-amp-villa-ceconi.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/salzburg-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/790319738.webp?k=ce014f5258783ff7d25989d5461185298631ade80dee89e12b090e6fcd63ad22&o="
    },
    {
     "src": "Booking",
@@ -554,7 +553,7 @@ window.STAYS = {
     "dist": 2.7,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 55 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/at/eb-garni.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/salzburg-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/315363132.webp?k=c17013509642a32fabfb722792099cc8c6ffa6def70a95fb2d39f25012c9fd40&o="
    }
   ]
  },
@@ -575,7 +574,7 @@ window.STAYS = {
     "dist": 8.3,
     "info": "2 bedrooms · 5 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/20602559?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/ljubljana-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/4ab12cab-6d6f-4e7a-a7ed-1437f7aee6e7.jpg"
    },
    {
     "src": "Airbnb",
@@ -588,7 +587,7 @@ window.STAYS = {
     "dist": 0.4,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/45264601?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/ljubljana-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/8382dce8-edd4-4fce-a85e-55af5aeff2b8.jpg"
    }
   ],
   "booking": [
@@ -603,7 +602,7 @@ window.STAYS = {
     "dist": 3.8,
     "info": "Two-Bedroom Apartment with Balcony | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/si/villa-andrea-ljubljana.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/ljubljana-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/715377946.webp?k=2e7f72d45ee380f956ec90c08434c6e0e79d42418cd8dab7f0c63a6380ceb26c&o="
    },
    {
     "src": "Booking",
@@ -616,7 +615,7 @@ window.STAYS = {
     "dist": 0.3,
     "info": "Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 80 m² | 3 beds (1 extra-large double, 1 sofa bed, 1 large double)",
     "url": "https://www.booking.com/hotel/si/skyscraper-apartment-ljubljana.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/ljubljana-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/159964874.webp?k=a7f3de24402d74934b8300362d30950c92724b81ae2666b6f2f772a2ac3191a5&o="
    }
   ]
  },
@@ -637,7 +636,7 @@ window.STAYS = {
     "dist": 3.0,
     "info": "2 bedrooms · 6 single beds",
     "url": "https://www.airbnb.com.ua/rooms/22708916?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/zagreb-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/airflow/Hosting-22708916/original/5a6ed6e4-0bb7-45bf-a5af-518d96cf2af3.jpg"
    },
    {
     "src": "Airbnb",
@@ -650,7 +649,7 @@ window.STAYS = {
     "dist": 1.8,
     "info": "2 bedrooms · 3 beds · 2 baths",
     "url": "https://www.airbnb.com.ua/rooms/1157380739163170240?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/zagreb-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1157380739163170240/original/0f5a4d45-4b4d-46d0-a5ec-e61af8042836.jpeg"
    }
   ],
   "booking": [
@@ -665,7 +664,7 @@ window.STAYS = {
     "dist": 5.0,
     "info": "Three-Bedroom Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 100 m² | 6 single beds",
     "url": "https://www.booking.com/hotel/hr/apartman-sveti-rok.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/zagreb-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/117159807.webp?k=094630e21099553deffb1606a472a28a476a7995878c82446fe9f96acecb6044&o="
    },
    {
     "src": "Booking",
@@ -678,7 +677,7 @@ window.STAYS = {
     "dist": 5.7,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 72 m² | 4 beds (2 singles, 1 double, 1 sofa bed)",
     "url": "https://www.booking.com/hotel/hr/flexible-selfcheckins-40-zagreb-parking-big-loggia-new-2-beedroms.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/zagreb-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/420835257.webp?k=0278008df0521ec02480604803718381665347eca5381600e2b196d12ad474ed&o="
    }
   ]
  },
@@ -699,7 +698,7 @@ window.STAYS = {
     "dist": 2.5,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1191172264530545647?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/tallinn-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE5MTE3MjI2NDUzMDU0NTY0Nw%3D%3D/original/37edefdc-1a0f-433f-809c-6890f2f3eeb2.jpeg"
    },
    {
     "src": "Airbnb",
@@ -712,7 +711,7 @@ window.STAYS = {
     "dist": 0.9,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/24686019?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/tallinn-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-24686019/original/da5a82b3-1e6d-46c6-9123-04d3c630cd8a.jpeg"
    }
   ],
   "booking": [
@@ -727,7 +726,7 @@ window.STAYS = {
     "dist": 1.9,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 55 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/ee/villardi-aparments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/tallinn-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/653813341.webp?k=4f2ca1fb356360ffd616118c3c05040e524d691f078643e6ef98fd8b9a99a40e&o="
    },
    {
     "src": "Booking",
@@ -740,7 +739,7 @@ window.STAYS = {
     "dist": 5.7,
     "info": "3× | Studio with Park View | 3 entire apartments • 3 bedrooms • 3 bathrooms • 3 kitchens | 6 single beds",
     "url": "https://www.booking.com/hotel/ee/pirita-resort-apartments-amp-spa.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/tallinn-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/80479311.webp?k=58d8fe614942ec09e02d3b05063bf7faff63d1c7e42fdcd2d25c5f8030aea596&o="
    }
   ]
  },
@@ -761,7 +760,7 @@ window.STAYS = {
     "dist": 5.9,
     "info": "2 bedrooms · 3 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/1506418975424576407?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/riga-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTUwNjQxODk3NTQyNDU3NjQwNw==/original/c3546bc1-772f-40b3-b558-158735452f0f.jpeg"
    },
    {
     "src": "Airbnb",
@@ -774,7 +773,7 @@ window.STAYS = {
     "dist": 2.2,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/2772806?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/riga-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/108433645/f6f2824d_original.jpg"
    }
   ],
   "booking": [
@@ -789,7 +788,7 @@ window.STAYS = {
     "dist": 4.3,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 54 m² | 3 beds (1 double, 2 sofa beds)",
     "url": "https://www.booking.com/hotel/lv/saknes-apartamenti.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/riga-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/515147801.webp?k=82f7190f4f72d90ede1376c9708e09e3d86c877e5fea14fb4ce986b1f121d79f&o="
    },
    {
     "src": "Booking",
@@ -802,7 +801,7 @@ window.STAYS = {
     "dist": 1.3,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 4 beds (1 double, 2 sofa beds, 1 large double)",
     "url": "https://www.booking.com/hotel/lv/city-heart-9-9-host-sunlit-free-parking-and-bag-storage.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/riga-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/721231839.webp?k=9a6ad0d2957358f3052c0060fdeef734b221b4e82fe7ab5bfb2e4c36c0137af7&o="
    }
   ]
  },
@@ -823,7 +822,7 @@ window.STAYS = {
     "dist": 4.2,
     "info": "2 bedrooms · 4 beds · 1 bath",
     "url": "https://www.airbnb.com.ua/rooms/675664525995008309?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/munich-1.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-675664525995008309/original/14b52671-50c5-4636-9a2e-c1496ef4d674.jpeg"
    },
    {
     "src": "Airbnb",
@@ -836,7 +835,7 @@ window.STAYS = {
     "dist": 7.8,
     "info": "3 bedrooms · 4 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1145389045176692692?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/munich-2.jpg"
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-1145389045176692692/original/04c588eb-a66c-42bb-95f5-ea0ced22ea75.jpeg"
    }
   ],
   "booking": [
@@ -851,7 +850,7 @@ window.STAYS = {
     "dist": 7.6,
     "info": "2× | Loft | 2 entire apartments • 2 bedrooms • 2 living rooms • 2 bathrooms | 6 beds (4 singles, 2 sofa beds)",
     "url": "https://www.booking.com/hotel/de/revo-munich-munchen.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/munich-3.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/355124430.webp?k=13adb258bdcf45685c44d268de084ec97c8509625ce09292c070e292594f4a2f&o="
    },
    {
     "src": "Booking",
@@ -864,8 +863,8 @@ window.STAYS = {
     "dist": 3.8,
     "info": "Three-Bedroom Apartment Suite | Entire apartment • 3 bedrooms • 2 living rooms • 1 bathroom • 1 kitchen • 150 m² | 7 beds (1 single, 2 doubles, 4 sofa beds) | Breakfast included | Free cancel",
     "url": "https://www.booking.com/hotel/de/ruhiges-appartement-im-herzen-munchens.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/munich-4.jpg"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square240/924460621.webp?k=36079e3fc8fbfd577e26f4a561d934ba7a5102225affb5c8552b630e268d7fe8&o="
    }
   ]
  }
-};
+}

@@ -494,5 +494,377 @@
     "img": "img/strasbourg-4.jpg"
    }
   ]
+ },
+ "salzburg": {
+  "n": 23,
+  "mean": 5129,
+  "median": 4370,
+  "min": 2027,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "Your apartment in the countryside",
+    "kind": "Apartment in Plainfeld, Austria",
+    "price": 2391,
+    "taxnote": "без туристичного збору",
+    "rating": "4.84",
+    "reviews": 19,
+    "dist": 8.6,
+    "info": "3 bedrooms · 4 beds · 1.5 baths",
+    "url": "https://www.airbnb.com.ua/rooms/952092124290024038?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/salzburg-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Salzburg -Villa 200m2 for 8 people, 3 parking spac",
+    "kind": "Villa in Salzburg-Umgebung, Austria",
+    "price": 3122,
+    "taxnote": "без туристичного збору",
+    "rating": "4.76",
+    "reviews": 29,
+    "dist": 8.0,
+    "info": "4 bedrooms · 4 beds · 3.5 baths",
+    "url": "https://www.airbnb.com.ua/rooms/51296635?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/salzburg-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Holiday Apartments by Das Grüne Hotel zur Post - 100 % BIO & Villa Ceconi",
+    "kind": "",
+    "price": 3525,
+    "taxnote": "з податками",
+    "rating": "8.5",
+    "reviews": 176,
+    "dist": 1.8,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 3 beds (2 sofa beds, 1 large double)",
+    "url": "https://www.booking.com/hotel/at/holiday-apartments-by-das-grune-zur-post-100-bio-amp-villa-ceconi.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/salzburg-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "HOMEBOUND APARTMENTS Salzburg City I - contactless check-in",
+    "kind": "",
+    "price": 3835,
+    "taxnote": "з податками",
+    "rating": "9.1",
+    "reviews": 583,
+    "dist": 2.7,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 55 m² | 3 beds (1 sofa bed, 2 large doubles)",
+    "url": "https://www.booking.com/hotel/at/eb-garni.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/salzburg-4.jpg"
+   }
+  ]
+ },
+ "ljubljana": {
+  "n": 64,
+  "mean": 4256,
+  "median": 4284,
+  "min": 1513,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "Comfy*lovely host*clean*free parking*PERFETTO",
+    "kind": "Apartment in Brezovica pri Ljubljani",
+    "price": 1513,
+    "taxnote": "без туристичного збору",
+    "rating": "4.95",
+    "reviews": 110,
+    "dist": 8.3,
+    "info": "2 bedrooms · 5 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/20602559?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/ljubljana-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Skyscraper apartment Tour As with terrace and AC",
+    "kind": "Apartment in Ljubljana",
+    "price": 2246,
+    "taxnote": "без туристичного збору",
+    "rating": "4.88",
+    "reviews": 24,
+    "dist": 0.4,
+    "info": "2 bedrooms · 3 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/45264601?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/ljubljana-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Villa Andrea Apartments - Ljubljana",
+    "kind": "",
+    "price": 2232,
+    "taxnote": "з податками",
+    "rating": "9.0",
+    "reviews": 117,
+    "dist": 3.8,
+    "info": "Two-Bedroom Apartment with Balcony | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
+    "url": "https://www.booking.com/hotel/si/villa-andrea-ljubljana.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/ljubljana-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "Skyscraper Apartment Tour As Ljubljana",
+    "kind": "",
+    "price": 2506,
+    "taxnote": "з податками",
+    "rating": "9.2",
+    "reviews": 39,
+    "dist": 0.3,
+    "info": "Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 80 m² | 3 beds (1 extra-large double, 1 sofa bed, 1 large double)",
+    "url": "https://www.booking.com/hotel/si/skyscraper-apartment-ljubljana.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/ljubljana-4.jpg"
+   }
+  ]
+ },
+ "zagreb": {
+  "n": 151,
+  "mean": 2600,
+  "median": 2337,
+  "min": 996,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "Apartment \"Maksimir Relax\" **** Zagreb",
+    "kind": "Apartment in Zagreb",
+    "price": 1250,
+    "taxnote": "без туристичного збору",
+    "rating": "4.87",
+    "reviews": 62,
+    "dist": 3.0,
+    "info": "2 bedrooms · 6 single beds",
+    "url": "https://www.airbnb.com.ua/rooms/22708916?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/zagreb-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Elegant and spacious apartment  in city centre",
+    "kind": "Apartment in Zagreb",
+    "price": 1358,
+    "taxnote": "без туристичного збору",
+    "rating": "4.86",
+    "reviews": 7,
+    "dist": 1.8,
+    "info": "2 bedrooms · 3 beds · 2 baths",
+    "url": "https://www.airbnb.com.ua/rooms/1157380739163170240?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/zagreb-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Apartman Sveti Rok",
+    "kind": "",
+    "price": 1368,
+    "taxnote": "з податками",
+    "rating": "8.6",
+    "reviews": 46,
+    "dist": 5.0,
+    "info": "Three-Bedroom Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 100 m² | 6 single beds",
+    "url": "https://www.booking.com/hotel/hr/apartman-sveti-rok.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/zagreb-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "Flexible SelfCheckIns 40 - Zagreb - Parking - Big Loggia - New - 2 beedroms",
+    "kind": "",
+    "price": 1428,
+    "taxnote": "з податками",
+    "rating": "8.7",
+    "reviews": 122,
+    "dist": 5.7,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 72 m² | 4 beds (2 singles, 1 double, 1 sofa bed)",
+    "url": "https://www.booking.com/hotel/hr/flexible-selfcheckins-40-zagreb-parking-big-loggia-new-2-beedroms.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/zagreb-4.jpg"
+   }
+  ]
+ },
+ "tallinn": {
+  "n": 125,
+  "mean": 2264,
+  "median": 2214,
+  "min": 811,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "Tallinn Airport-SPA Bath-ForKids",
+    "kind": "Apartment in Tallinn",
+    "price": 811,
+    "taxnote": "без туристичного збору",
+    "rating": "4.68",
+    "reviews": 37,
+    "dist": 2.5,
+    "info": "2 bedrooms · 4 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/1191172264530545647?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/tallinn-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Large 2-bedroom flat close to Hilton Tallinn",
+    "kind": "Apartment in Tallinn",
+    "price": 944,
+    "taxnote": "без туристичного збору",
+    "rating": "4.92",
+    "reviews": 37,
+    "dist": 0.9,
+    "info": "2 bedrooms · 3 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/24686019?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/tallinn-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Villardi apartment & free parking",
+    "kind": "",
+    "price": 1040,
+    "taxnote": "з податками",
+    "rating": "9.0",
+    "reviews": 103,
+    "dist": 1.9,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 55 m² | 3 beds (1 sofa bed, 2 large doubles)",
+    "url": "https://www.booking.com/hotel/ee/villardi-aparments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/tallinn-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "Pirita Beach Apartments & SPA",
+    "kind": "",
+    "price": 1076,
+    "taxnote": "з податками",
+    "rating": "7.9",
+    "reviews": 2235,
+    "dist": 5.7,
+    "info": "3× | Studio with Park View | 3 entire apartments • 3 bedrooms • 3 bathrooms • 3 kitchens | 6 single beds",
+    "url": "https://www.booking.com/hotel/ee/pirita-resort-apartments-amp-spa.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/tallinn-4.jpg"
+   }
+  ]
+ },
+ "riga": {
+  "n": 166,
+  "mean": 1915,
+  "median": 1819,
+  "min": 427,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "Cozy apartment near the Daugava",
+    "kind": "Apartment in Riga",
+    "price": 756,
+    "taxnote": "без туристичного збору",
+    "rating": "4.93",
+    "reviews": 30,
+    "dist": 5.9,
+    "info": "2 bedrooms · 3 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/1506418975424576407?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/riga-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Beautiful 2BD in Riga City Center",
+    "kind": "Condo in Centrs",
+    "price": 949,
+    "taxnote": "без туристичного збору",
+    "rating": "4.61",
+    "reviews": 102,
+    "dist": 2.2,
+    "info": "2 bedrooms · 4 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/2772806?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/riga-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Saknes apartamenti",
+    "kind": "",
+    "price": 798,
+    "taxnote": "з податками",
+    "rating": "9.2",
+    "reviews": 44,
+    "dist": 4.3,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 54 m² | 3 beds (1 double, 2 sofa beds)",
+    "url": "https://www.booking.com/hotel/lv/saknes-apartamenti.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/riga-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "City heart, sunlit, free parking and bag storage",
+    "kind": "",
+    "price": 1032,
+    "taxnote": "з податками",
+    "rating": "9.2",
+    "reviews": 47,
+    "dist": 1.3,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 4 beds (1 double, 2 sofa beds, 1 large double)",
+    "url": "https://www.booking.com/hotel/lv/city-heart-9-9-host-sunlit-free-parking-and-bag-storage.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/riga-4.jpg"
+   }
+  ]
+ },
+ "munich": {
+  "n": 113,
+  "mean": 4254,
+  "median": 3803,
+  "min": 1316,
+  "airbnb": [
+   {
+    "src": "Airbnb",
+    "name": "🌲🍃Best location by the English Garden💫🪴",
+    "kind": "Condo in Munich",
+    "price": 2185,
+    "taxnote": "без туристичного збору",
+    "rating": "4.91",
+    "reviews": 188,
+    "dist": 4.2,
+    "info": "2 bedrooms · 4 beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/675664525995008309?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/munich-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Alpine & Munich skyline view apartment",
+    "kind": "Apartment in Munich",
+    "price": 2624,
+    "taxnote": "без туристичного збору",
+    "rating": "4.90",
+    "reviews": 21,
+    "dist": 7.8,
+    "info": "3 bedrooms · 4 beds · 1.5 baths",
+    "url": "https://www.airbnb.com.ua/rooms/1145389045176692692?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/munich-2.jpg"
+   }
+  ],
+  "booking": [
+   {
+    "src": "Booking",
+    "name": "Revo Munich",
+    "kind": "",
+    "price": 1567,
+    "taxnote": "з податками",
+    "rating": "8.8",
+    "reviews": 2633,
+    "dist": 7.6,
+    "info": "2× | Loft | 2 entire apartments • 2 bedrooms • 2 living rooms • 2 bathrooms | 6 beds (4 singles, 2 sofa beds)",
+    "url": "https://www.booking.com/hotel/de/revo-munich-munchen.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/munich-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "City Appartement am Olympiapark",
+    "kind": "",
+    "price": 1632,
+    "taxnote": "з податками",
+    "rating": "8.1",
+    "reviews": 16,
+    "dist": 3.8,
+    "info": "Three-Bedroom Apartment Suite | Entire apartment • 3 bedrooms • 2 living rooms • 1 bathroom • 1 kitchen • 150 m² | 7 beds (1 single, 2 doubles, 4 sofa beds) | Breakfast included | Free cancel",
+    "url": "https://www.booking.com/hotel/de/ruhiges-appartement-im-herzen-munchens.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/munich-4.jpg"
+   }
+  ]
  }
 }

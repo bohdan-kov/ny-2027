@@ -55,5 +55,47 @@ window.CITY_PHOTOS = {
   "license": "CC BY-SA 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Christmas_market_Prague_2021_04.jpg",
   "title": "Christmas market Prague 2021 04.jpg"
+ },
+ "salzburg": {
+  "img": "img/cities/salzburg.jpg",
+  "author": "Salzburger Nockerl",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Christmas_Market_Salzburg_Austria_.jpg",
+  "title": "Christmas Market Salzburg Austria .jpg"
+ },
+ "ljubljana": {
+  "img": "img/cities/ljubljana.jpg",
+  "author": "Oleg Brovko from Trieste, Italy",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ljubljana_Christmas_Market_Lights_(27038133379).jpg",
+  "title": "Ljubljana Christmas Market Lights (27038133379).jpg"
+ },
+ "zagreb": {
+  "img": "img/cities/zagreb.jpg",
+  "author": "Branko Radovanović",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Zagreb_Advent_20171224_DSC_8446.jpg",
+  "title": "Zagreb Advent 20171224 DSC 8446.jpg"
+ },
+ "tallinn": {
+  "img": "img/cities/tallinn.jpg",
+  "author": "Tusklikupreili",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:J%C3%B5uluturg_Tallinnas_Raekoja_platsil.jpg",
+  "title": "Jõuluturg Tallinnas Raekoja platsil.jpg"
+ },
+ "riga": {
+  "img": "img/cities/riga.jpg",
+  "author": "AleWi",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_-_Riga_-_20231211_-_01.jpg",
+  "title": "Christmas markets - Riga - 20231211 - 01.jpg"
+ },
+ "munich": {
+  "img": "img/cities/munich.jpg",
+  "author": "Wikimedia Commons",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:M%C3%BCnchner_Christkindlmarkt_2.JPG",
+  "title": "Münchner Christkindlmarkt 2.JPG"
  }
 };
