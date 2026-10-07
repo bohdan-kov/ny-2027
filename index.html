@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новий рік 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <p class="kicker">Новорічна поїздка · 6 друзів · 8 міст на вибір</p>
+    <h1>Де зустрінемо <em>2027</em>?</h1>
+    <ul class="facts">
+      <li><span>Дати</span>28 грудня → 5 січня</li>
+      <li><span>Ночей</span>8</li>
+      <li><span>Компанія</span>6 дорослих</li>
+      <li><span>Старт</span>Київ</li>
+    </ul>
+    <p class="hero-lead">Для кожного міста зібрано по 2 найдешевші варіанти цілого житла з Airbnb і Booking, середню ціну та найдешевший маршрут з Києва туди й назад. Ціни актуальні на 7 жовтня 2026 року.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="rank" aria-labelledby="rank-h">
+    <div class="sec-head">
+      <div>
+        <h2 id="rank-h">Скільки коштує поїздка на одну людину</h2>
+        <p class="sub">Частка житла (поділена на шістьох) плюс квиток туди й назад. Натисніть на місто, щоб побачити деталі.</p>
+      </div>
+      <div class="seg" role="group" aria-label="Як рахувати житло">
+        <button type="button" id="mode-min" aria-pressed="true">Найдешевше житло</button>
+        <button type="button" id="mode-avg" aria-pressed="false">Середня ціна</button>
+      </div>
+    </div>
+    <div class="legend"><span><i class="sw house"></i>житло</span><span><i class="sw road"></i>дорога</span></div>
+    <div class="tickets" id="tickets"></div>
+  </section>
+
+  <nav class="cities-nav" id="nav" aria-label="Міста"></nav>
+  <div id="cities"></div>
+
+  <section class="notes" aria-label="Як рахували">
+    <div>
+      <h3>Як відбирали житло</h3>
+      <p>Ціле житло для 6 гостей, від 2 спалень і з 6 спальними місцями. Двоспальне ліжко чи диван рахуються як 2 місця. До центру не більше 9 км. Рейтинг на Booking від 7.0, на Airbnb від 4.6, щонайменше 5 відгуків.</p>
+    </div>
+    <div>
+      <h3>Що входить у ціну</h3>
+      <p>Booking показано з податками. Airbnb показано з сервісним збором, але без міського туристичного податку (1–5 € з особи за ніч). Середня ціна рахується без 10% найдешевших і 10% найдорожчих оголошень.</p>
+    </div>
+    <div>
+      <h3>Дорога</h3>
+      <p>Ціни FlixBus, Ryanair і Wizz Air подано на 7.10.2026, ближче до свят вони зростуть. Тарифи лоукостів не включають валізу. Квитки Укрзалізниці ще не продаються, тому ціни на потяги позначено «≈».</p>
+    </div>
+  </section>
+</main>
+
+<script src="data/stays.js"></script>
+<script src="data/transport.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
