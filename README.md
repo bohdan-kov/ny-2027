@@ -23,6 +23,8 @@ data/stays.json     те саме в JSON
 data/transport.js   маршрути з Києва: рейси, час, ціни
 data/raw/           сирі результати пошуку Airbnb і Booking
 img/                фото житла
+img/cities/         новорічні фото міст (Wikimedia Commons)
+data/city-photos.js автори й ліцензії фото міст
 scripts/            скрипти збору даних
 ```
 

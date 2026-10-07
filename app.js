@@ -1,5 +1,6 @@
 const DATA = window.STAYS;
 const T = window.TRANSPORT;
+const PH = window.CITY_PHOTOS || {};
 const ORDER = Object.keys(T);
 ORDER.forEach(c => { T[c].total = [...T[c].out, ...T[c].back].reduce((s, l) => s + l[3], 0); });
 
@@ -28,7 +29,7 @@ function renderTickets() {
   document.getElementById('tickets').innerHTML = rows.map((r, i) => `
     <button type="button" class="ticket${i === 0 ? ' first' : ''}" data-city="${r.c}" aria-label="${T[r.c].ua}: ${fmt(r.t)} на людину">
       <div class="t-top">
-        <div><div class="t-rank">№ ${i + 1}</div><div class="t-city">${T[r.c].ua}</div><div class="t-cc">${T[r.c].cc}</div></div>
+        <div class="t-name">${PH[r.c] ? `<img class="t-thumb" src="${PH[r.c].img}" alt="" loading="lazy">` : ''}<div><div class="t-rank">№ ${i + 1}</div><div class="t-city">${T[r.c].ua}</div><div class="t-cc">${T[r.c].cc}</div></div></div>
         ${i === 0 ? '<span class="t-badge">найвигідніше</span>' : ''}
       </div>
       <div class="t-total"><b>${fmt(r.t)}</b><span>на людину</span></div>
@@ -85,17 +86,20 @@ function renderCities() {
   document.getElementById('cities').innerHTML = ORDER.map((c, i) => {
     const d = DATA[c], t = T[c], stays = staysOf(c), minP = minPrice(c);
     return `<section class="city" id="c-${c}" aria-labelledby="h-${c}">
-      <div class="city-head">
-        <div>
-          <div class="city-title"><span class="city-no">№ ${i + 1}</span><h2 id="h-${c}">${t.ua}</h2></div>
+      <div class="cover${PH[c] ? '' : ' no-photo'}">
+        ${PH[c] ? `<img src="${PH[c].img}" alt="${t.ua} у новорічні свята" loading="lazy">` : ''}
+        <div class="cover-text">
+          <span class="city-no">№ ${i + 1}</span>
+          <h2 id="h-${c}">${t.ua}</h2>
           <div class="city-cc">${t.cc} · проаналізовано ${d.n} оголошень</div>
         </div>
-        <div class="kpis">
-          <div class="kpi"><b>${fmt(minP)}</b><span>найдешевше житло</span></div>
-          <div class="kpi"><b>${fmt(d.mean)}</b><span>середня ціна житла</span></div>
-          <div class="kpi"><b>${fmt(t.total)}</b><span>дорога з особи</span></div>
-          <div class="kpi hl"><b>${fmt(minP / 6 + t.total)}</b><span>разом на людину</span></div>
-        </div>
+        ${PH[c] ? `<a class="credit" href="${PH[c].source}" target="_blank" rel="noopener">Фото: ${esc(PH[c].author)}, ${PH[c].license}</a>` : ''}
+      </div>
+      <div class="kpis">
+        <div class="kpi"><b>${fmt(minP)}</b><span>найдешевше житло</span></div>
+        <div class="kpi"><b>${fmt(d.mean)}</b><span>середня ціна житла</span></div>
+        <div class="kpi"><b>${fmt(t.total)}</b><span>дорога з особи</span></div>
+        <div class="kpi hl"><b>${fmt(minP / 6 + t.total)}</b><span>разом на людину</span></div>
       </div>
       <div class="stays">${stays.map(x => stayCard(x, x.price === minP)).join('')}</div>
       <div class="route">
