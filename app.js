@@ -10,7 +10,9 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const staysOf = c => [...DATA[c].airbnb, ...DATA[c].booking];
 const minPrice = c => Math.min(...staysOf(c).map(x => x.price));
 const housing = (c, mode) => mode === 'avg' ? DATA[c].mean : minPrice(c);
-const perPerson = c => minPrice(c) / 6 + T[c].total;
+// житло на 8 ночей + додаткові ночі, якщо цього вимагає розклад дороги
+const housingPP = c => minPrice(c) * (8 + (T[c].extraNights || 0)) / 8 / 6;
+const perPerson = c => housingPP(c) + T[c].total;
 
 /* ---------- Оцінка поїздки ----------
    Overall = 60% NY Experience + 20% Logistics + 20% Price */
@@ -20,8 +22,8 @@ const NY_CRIT = [
   ['weather', 'Погода', 5], ['comfort', 'Комфорт і натовпи', 5]
 ];
 const LOG_CRIT = [
-  ['hours', 'Час у дорозі', 35], ['transfers', 'Пересадки', 25], ['nights', 'Нічні переїзди', 15],
-  ['risk', 'Ризик стикувань', 15], ['conv', 'Прибуття й виїзд', 10]
+  ['hours', 'Час у дорозі', 50], ['transfers', 'Пересадки', 20], ['risk', 'Ризик стикувань', 15],
+  ['nights', 'Нічні переїзди', 10], ['conv', 'Прибуття в місто', 5]
 ];
 const lin = (v, best, worst, hi, lo) => best === worst ? hi : hi - (v - best) / (worst - best) * (hi - lo);
 const LG = ORDER.map(c => T[c].logi);
@@ -34,8 +36,8 @@ const SCORE = {};
 ORDER.forEach(c => {
   const l = T[c].logi, ny = (NYX[c] || {}).scores || {};
   const logParts = {
-    hours: lin(l.hours, hMin, hMax, 35, 5), transfers: lin(l.transfers, tMin, tMax, 25, 5),
-    nights: lin(l.nights, nMin, nMax, 15, 5), risk: l.risk, conv: l.conv
+    hours: lin(l.hours, hMin, hMax, 50, 10), transfers: lin(l.transfers, tMin, tMax, 20, 4),
+    risk: l.risk, nights: lin(l.nights, nMin, nMax, 10, 2), conv: l.conv
   };
   const nyTotal = NY_CRIT.reduce((s, [k]) => s + (ny[k] || 0), 0);
   const logTotal = Object.values(logParts).reduce((s, v) => s + v, 0);
@@ -128,6 +130,7 @@ function scoreCard(c) {
   return `<div class="score">
     <div class="sc-col">
       <div class="sc-head"><h3>NY Experience</h3><b>${Math.round(s.nyTotal)}<small>/100</small></b></div>
+      ${x.scores_research && Object.values(x.scores_research).reduce((p, v) => p + v, 0) !== Math.round(s.nyTotal) ? `<p class="sc-note">Початкова оцінка дослідження: ${Object.values(x.scores_research).reduce((p, v) => p + v, 0)}. Скориговано компанією.</p>` : ''}
       <ul class="crit">${critRows(NY_CRIT, s.ny, 'ny')}</ul>
     </div>
     <div class="sc-col">
@@ -135,7 +138,7 @@ function scoreCard(c) {
       <ul class="crit">${critRows(LOG_CRIT, s.logParts, 'lg')}</ul>
       <p class="sc-note">${l.hours} год у дорозі туди й назад · пересадок: ${l.transfers} · ночей у дорозі: ${l.nights}. ${l.note.charAt(0).toUpperCase() + l.note.slice(1)}.</p>
       <div class="sc-head sc-price"><h3>Ціна</h3><b>${Math.round(s.price)}<small>/100</small></b></div>
-      <p class="sc-note">${fmt(perPerson(c))} на людину. Найдешевше місто отримує 100, інші пропорційно: 100 × ${fmt(cheapestPP)} / ціна міста.</p>
+      <p class="sc-note">${fmt(perPerson(c))} на людину${T[c].extraNights ? `, включно з ${T[c].extraNights} додатковою ніччю житла` : ''}. Найдешевше місто отримує 100, інші пропорційно: 100 × ${fmt(cheapestPP)} / ціна міста.</p>
     </div>
     <div class="sc-col sc-ny">
       <h3>Новий рік тут</h3>
@@ -170,12 +173,12 @@ function renderCities() {
         <div class="kpi"><b>${fmt(minP)}</b><span>найдешевше житло</span></div>
         <div class="kpi"><b>${fmt(d.mean)}</b><span>середня ціна житла</span></div>
         <div class="kpi"><b>${fmt(t.total)}</b><span>дорога з особи</span></div>
-        <div class="kpi hl"><b>${fmt(minP / 6 + t.total)}</b><span>разом на людину</span></div>
+        <div class="kpi hl"><b>${fmt(perPerson(c))}</b><span>разом на людину${t.extraNights ? ' (з дод. ніччю)' : ''}</span></div>
       </div>
       ${scoreCard(c)}
       <div class="stays">${stays.map(x => stayCard(x, x.price === minP)).join('')}</div>
       <div class="route">
-        <div class="route-head"><h3>Дорога з Києва</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію</span></div>
+        <div class="route-head"><h3>Дорога з Києва</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію${t.extraNights ? ` · <b>+${t.extraNights} ніч житла</b>` : ''}</span></div>
         <div class="dirs">
           <div class="dir"><div class="dir-label">Туди</div><ol class="legs">${t.out.map(legItem).join('')}</ol></div>
           <div class="dir"><div class="dir-label">Назад</div><ol class="legs">${t.back.map(legItem).join('')}</ol></div>

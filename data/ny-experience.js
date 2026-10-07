@@ -1,17 +1,18 @@
 // NY Experience: експертні оцінки за офіційними джерелами та минулими святкуваннями (дослідження 07.10.2026)
+// scores_research — початкові оцінки дослідження; scores — після коригування компанією (07.10.2026)
 // scores: nye /25, atmosphere /20, nightlife /15, uniqueness /10, eight_days /10, official_events /10, weather /5, comfort /5
 // events.status: confirmed — підтверджено на 2026/27; recurring — щорічна традиція; uncertain — під питанням
 window.NY_EXPERIENCE = {
  "paris": {
   "scores": {
-   "nye": 21,
-   "atmosphere": 15,
-   "nightlife": 14,
-   "uniqueness": 9,
+   "nye": 23,
+   "atmosphere": 17,
+   "nightlife": 15,
+   "uniqueness": 10,
    "eight_days": 10,
-   "official_events": 7,
+   "official_events": 8,
    "weather": 3,
-   "comfort": 2
+   "comfort": 3
   },
   "summary_uk": "Безкоштовне велике шоу на Єлисейських Полях (відеомапінг на Тріумфальній арці й феєрверк о 00:00) і найбільший вибір клубних вечірок, але натовп величезний, а атмосфера менш «різдвяна», ніж у Центральній Європі.",
   "nye_uk": "Щороку 31.12 з 19:00: перекриті Єлисейські Поля, о 23:50 мапінг на арці, опівночі 10-хвилинний феєрверк; у 2025/26 концерти скасували, лишили тільки мапінг і феєрверк; сторінка parisjetaime вже анонсує 31.12.2026, але програми ще немає.",
@@ -43,15 +44,25 @@ window.NY_EXPERIENCE = {
    "https://parisjetaime.com/eng/event/31-december-champs-elysees-e081",
    "https://www.sortiraparis.com/en/news/christmas-and-holidays/guides/45722-new-year-s-eve-2025-2026-in-paris-celebration-events-by-district-on-december-31-2025",
    "https://location.carrefour.fr/bien-louer/marche-noel-tuileries-paris"
-  ]
+  ],
+  "scores_research": {
+   "nye": 21,
+   "atmosphere": 15,
+   "nightlife": 14,
+   "uniqueness": 9,
+   "eight_days": 10,
+   "official_events": 7,
+   "weather": 3,
+   "comfort": 2
+  }
  },
  "vienna": {
   "scores": {
-   "nye": 23,
-   "atmosphere": 17,
-   "nightlife": 11,
-   "uniqueness": 8,
-   "eight_days": 9,
+   "nye": 24,
+   "atmosphere": 18,
+   "nightlife": 13,
+   "uniqueness": 9,
+   "eight_days": 10,
    "official_events": 10,
    "weather": 2,
    "comfort": 4
@@ -104,18 +115,28 @@ window.NY_EXPERIENCE = {
    "https://www.wien.info/de/aktuell/weihnachten/weihnachtsmaerkte-365008",
    "https://www.vienna.at/startschuss-fuer-wiener-silvesterpfad-2025/9896939",
    "https://www.leadersnet.at/news/85260,wiener-silvesterpfad-bietet-heuer-rund-100-stunden-programm.html"
-  ]
+  ],
+  "scores_research": {
+   "nye": 23,
+   "atmosphere": 17,
+   "nightlife": 11,
+   "uniqueness": 8,
+   "eight_days": 9,
+   "official_events": 10,
+   "weather": 2,
+   "comfort": 4
+  }
  },
  "prague": {
   "scores": {
-   "nye": 14,
-   "atmosphere": 18,
-   "nightlife": 12,
-   "uniqueness": 8,
-   "eight_days": 9,
-   "official_events": 5,
+   "nye": 19,
+   "atmosphere": 19,
+   "nightlife": 13,
+   "uniqueness": 9,
+   "eight_days": 10,
+   "official_events": 7,
    "weather": 2,
-   "comfort": 2
+   "comfort": 3
   },
   "summary_uk": "Казкова різдвяна Прага з ринками до 6 січня, але офіційного свята 31.12 немає: тисячі людей стихійно збираються на Старомєстській площі та набережних, а місто тоне в натовпі туристів.",
   "nye_uk": "Магістрат уже кілька років не проводить офіційного свята ні 31.12, ні 1.01 (відеомапінг на Національному музеї й новорічний феєрверк 1.01 скасовані); приватну піротехніку в історичному центрі та в 35 районах заборонено, а про 2026/27 оголошень немає.",
@@ -147,7 +168,17 @@ window.NY_EXPERIENCE = {
    "https://www.expats.cz/czech-news/article/prague-expands-year-round-fireworks-ban-to-35-city-districts",
    "https://prague.org/prague-new-years-fireworks/",
    "https://www.denik.cz/cestujeme-doma/ohnostroje-2025.html"
-  ]
+  ],
+  "scores_research": {
+   "nye": 14,
+   "atmosphere": 18,
+   "nightlife": 12,
+   "uniqueness": 8,
+   "eight_days": 9,
+   "official_events": 5,
+   "weather": 2,
+   "comfort": 2
+  }
  },
  "brno": {
   "scores": {
@@ -183,18 +214,28 @@ window.NY_EXPERIENCE = {
    "https://brnodaily.com/?p=22438",
    "https://brnodaily.com/?p=51173",
    "https://www.brnenskevanoce.cz/"
-  ]
+  ],
+  "scores_research": {
+   "nye": 10,
+   "atmosphere": 12,
+   "nightlife": 8,
+   "uniqueness": 4,
+   "eight_days": 6,
+   "official_events": 4,
+   "weather": 2,
+   "comfort": 4
+  }
  },
  "berlin": {
   "scores": {
-   "nye": 17,
-   "atmosphere": 12,
+   "nye": 21,
+   "atmosphere": 16,
    "nightlife": 15,
-   "uniqueness": 7,
-   "eight_days": 9,
-   "official_events": 5,
+   "uniqueness": 9,
+   "eight_days": 10,
+   "official_events": 8,
    "weather": 2,
-   "comfort": 1
+   "comfort": 3
   },
   "summary_uk": "Найкраща клубна столиця Європи (новорічні рейви до ранку), але офіційне свято біля Бранденбурзьких воріт змаліло, а вулиці в новорічну ніч перетворюються на «війну петардами».",
   "nye_uk": "Після скасування великої ZDF-вечірки у 2025/26 була менша вечірка біля Бранденбурзьких воріт з DJ і 7,5-хвилинним феєрверком (20 000 безкоштовних квитків за попереднім записом) та окремий рейв біля Siegessäule; формат на 2026/27 ще не оголошено.",
@@ -227,7 +268,17 @@ window.NY_EXPERIENCE = {
    "https://www.berlin.de/polizei/polizeimeldungen/2025/pressemitteilung.1628885.php",
    "https://www.berliner-zeitung.de/article/10005483",
    "https://www.visitberlin.de/de/blog/diese-weihnachtsmaerkte-sind-waehrend-der-feiertage-geoeffnet"
-  ]
+  ],
+  "scores_research": {
+   "nye": 17,
+   "atmosphere": 12,
+   "nightlife": 15,
+   "uniqueness": 7,
+   "eight_days": 9,
+   "official_events": 5,
+   "weather": 2,
+   "comfort": 1
+  }
  },
  "budapest": {
   "scores": {
@@ -271,18 +322,28 @@ window.NY_EXPERIENCE = {
    "https://budappest.com/new-years-eve-fireworks-in-budapest-what-tourists-need-to-know-for-2025-26/",
    "https://budappest.com/vorosmarty-square-christmas-market-2025-budapests-heart-of-holiday-cheer/",
    "https://www.timeout.com/hu/budapest/hirek/buek-budapest-a-legjobb-ev-vegi-es-szilveszteri-programok-a-varosban-121225"
-  ]
+  ],
+  "scores_research": {
+   "nye": 17,
+   "atmosphere": 15,
+   "nightlife": 15,
+   "uniqueness": 8,
+   "eight_days": 9,
+   "official_events": 6,
+   "weather": 2,
+   "comfort": 3
+  }
  },
  "naples": {
   "scores": {
-   "nye": 20,
-   "atmosphere": 13,
-   "nightlife": 10,
-   "uniqueness": 9,
+   "nye": 23,
+   "atmosphere": 17,
+   "nightlife": 13,
+   "uniqueness": 10,
    "eight_days": 10,
-   "official_events": 7,
+   "official_events": 9,
    "weather": 4,
-   "comfort": 1
+   "comfort": 4
   },
   "summary_uk": "Найгучніший і найтепліший Новий рік зі списку: великий безкоштовний концерт на Piazza del Plebiscito, феєрверк над Кастель-дель-Ово і небо в салютах над усією затокою; плюс Помпеї, Амальфі й Капрі для днів після свята.",
   "nye_uk": "Безкоштовний концерт на Piazza del Plebiscito проводять щороку (у 2025/26 з 21:00 до 02:00 виступали Elodie, LDA та інші, а після нього був DJ-сет на Piazza Municipio); офіційний феєрверк запускають біля Кастель-дель-Ово; артистів на 2026/27 ще не оголосили.",
@@ -321,7 +382,17 @@ window.NY_EXPERIENCE = {
    "https://www.agi.it/cronaca/news/2026-01-01/feriti-capodanno-napoli-petardi-pede-dita-34889108/",
    "https://www.editorialedomani.it/fatti/botti-di-capodanno-57-feriti-a-napoli-un-morto-a-roma-vatrbjbc",
    "https://siviaggia.it/notizie/natale-napoli-2025/566887/amp/"
-  ]
+  ],
+  "scores_research": {
+   "nye": 20,
+   "atmosphere": 13,
+   "nightlife": 10,
+   "uniqueness": 9,
+   "eight_days": 10,
+   "official_events": 7,
+   "weather": 4,
+   "comfort": 1
+  }
  },
  "strasbourg": {
   "scores": {
@@ -364,16 +435,26 @@ window.NY_EXPERIENCE = {
    "https://www.bas-rhin.gouv.fr/",
    "https://www.horbourg-wihr.fr/wp-content/uploads/2025/12/AP-RAA-interdisant-la-vente-et-la-consommation-dalcool-VP-2025.pdf",
    "https://www.festivalenfrance.com/festival/marche-de-noel-de-strasbourg-christkindelsmarik"
-  ]
+  ],
+  "scores_research": {
+   "nye": 7,
+   "atmosphere": 8,
+   "nightlife": 7,
+   "uniqueness": 7,
+   "eight_days": 7,
+   "official_events": 4,
+   "weather": 2,
+   "comfort": 3
+  }
  },
  "salzburg": {
   "scores": {
-   "nye": 20,
-   "atmosphere": 17,
-   "nightlife": 6,
+   "nye": 23,
+   "atmosphere": 19,
+   "nightlife": 11,
    "uniqueness": 9,
-   "eight_days": 8,
-   "official_events": 8,
+   "eight_days": 9,
+   "official_events": 9,
    "weather": 2,
    "comfort": 4
   },
@@ -412,18 +493,28 @@ window.NY_EXPERIENCE = {
    "https://www.christkindlmarkt.co.at/",
    "https://www.salzburg.info/en/salzburg/new-years-eve",
    "https://www.salzburg24.at/news/salzburg/stadt/so-feiert-die-stadt-salzburg-party-programm-im-ueberblick-art-312453"
-  ]
+  ],
+  "scores_research": {
+   "nye": 20,
+   "atmosphere": 17,
+   "nightlife": 6,
+   "uniqueness": 9,
+   "eight_days": 8,
+   "official_events": 8,
+   "weather": 2,
+   "comfort": 4
+  }
  },
  "ljubljana": {
   "scores": {
-   "nye": 18,
-   "atmosphere": 16,
-   "nightlife": 9,
-   "uniqueness": 7,
-   "eight_days": 7,
-   "official_events": 7,
+   "nye": 21,
+   "atmosphere": 18,
+   "nightlife": 12,
+   "uniqueness": 9,
+   "eight_days": 8,
+   "official_events": 8,
    "weather": 2,
-   "comfort": 4
+   "comfort": 5
   },
   "summary_uk": "Компактне, затишне й безпечне місто з кількома безкоштовними вечірками просто неба та салютом із замкового пагорба. Ідеально для компанії, яка хоче свята без натовпів мегаполіса.",
   "nye_uk": "Silvestrovanja na prostem — традиційні безкоштовні вечірки на кількох площах. Головна з них на Kongresni trg (2025/26: 21:00–02:30, Nika Zorjan, Victory) з 5-хвилинним «екологічним» салютом із Люблянського замку опівночі. Програма на 2026/27 ще не оголошена.",
@@ -455,7 +546,17 @@ window.NY_EXPERIENCE = {
    "https://www.visitljubljana.com/en/visitors/events/events-in-ljubljana/festive-december",
    "https://www.rtvslo.si/n/693145",
    "https://www.inyourpocket.com/slovenia/ljubljana/articles/festive-december-in-ljubljana"
-  ]
+  ],
+  "scores_research": {
+   "nye": 18,
+   "atmosphere": 16,
+   "nightlife": 9,
+   "uniqueness": 7,
+   "eight_days": 7,
+   "official_events": 7,
+   "weather": 2,
+   "comfort": 4
+  }
  },
  "zagreb": {
   "scores": {
@@ -504,16 +605,26 @@ window.NY_EXPERIENCE = {
    "https://www.tportal.hr/vijesti/clanak/tko-ce-sudjelovati-na-adventu-u-zagrebu-raspisan-drugi-krug-natjecaja-20260727",
    "https://www.index.hr/magazin/clanak/zagreb-u-2026-uvela-dubioza-kolektiv-tomasevic-cestitao-sa-stagea/2745664.aspx",
    "https://www.croatiaweek.com/advent-in-zagreb-2025-is-announced/"
-  ]
+  ],
+  "scores_research": {
+   "nye": 18,
+   "atmosphere": 18,
+   "nightlife": 10,
+   "uniqueness": 7,
+   "eight_days": 6,
+   "official_events": 9,
+   "weather": 2,
+   "comfort": 4
+  }
  },
  "tallinn": {
   "scores": {
-   "nye": 15,
-   "atmosphere": 17,
-   "nightlife": 10,
+   "nye": 18,
+   "atmosphere": 18,
+   "nightlife": 11,
    "uniqueness": 9,
-   "eight_days": 7,
-   "official_events": 8,
+   "eight_days": 8,
+   "official_events": 9,
    "weather": 1,
    "comfort": 4
   },
@@ -547,7 +658,17 @@ window.NY_EXPERIENCE = {
    "https://news.err.ee/1609881833/5miinust-and-terminaator-to-perform-at-tallinn-new-year-concert-in-freedom-square",
    "https://news.err.ee/1609552786/tallinn-to-welcome-2025-with-concert-and-drone-show",
    "https://www.visittallinn.ee/"
-  ]
+  ],
+  "scores_research": {
+   "nye": 15,
+   "atmosphere": 17,
+   "nightlife": 10,
+   "uniqueness": 9,
+   "eight_days": 7,
+   "official_events": 8,
+   "weather": 1,
+   "comfort": 4
+  }
  },
  "riga": {
   "scores": {
@@ -589,7 +710,17 @@ window.NY_EXPERIENCE = {
    "https://www.riga.lv/en/article/residents-and-visitors-capital-are-invited-welcome-new-year-joyful-celebration-squares-old-riga",
    "https://www.lsm.lv/raksts/kultura/izklaide/28.11.2025-doma-laukuma-atverts-vecrigas-ziemassvetku-tirdzins-sosestdien-iedegs-rigas-galveno-svetku-egli.a624209/",
    "https://www.liveriga.com/"
-  ]
+  ],
+  "scores_research": {
+   "nye": 14,
+   "atmosphere": 15,
+   "nightlife": 11,
+   "uniqueness": 8,
+   "eight_days": 7,
+   "official_events": 6,
+   "weather": 1,
+   "comfort": 4
+  }
  },
  "munich": {
   "scores": {
@@ -645,6 +776,16 @@ window.NY_EXPERIENCE = {
    "https://www.tollwood.de/en/veranstaltungen/2025/new-years-eve-party-2025/",
    "https://www.abendzeitung-muenchen.de/muenchen/wars-das-jetzt-oder-kommt-da-noch-was-so-lief-muenchens-silvestermeile-fuer-40-euro-eintritt-art-1102830",
    "https://www.muenchen-transparent.de/dokumente/9623037/datei"
-  ]
+  ],
+  "scores_research": {
+   "nye": 16,
+   "atmosphere": 11,
+   "nightlife": 12,
+   "uniqueness": 7,
+   "eight_days": 9,
+   "official_events": 7,
+   "weather": 2,
+   "comfort": 3
+  }
  }
 };
