@@ -329,3 +329,15 @@ body.has-choice{padding-bottom:132px}
 .mine-act button:hover{color:var(--berry)}
 .kpi.hl-soft{box-shadow:0 0 0 2px var(--gold),var(--shadow)}
 .t-go{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ---------- Валюта ---------- */
+.cur-switch{position:absolute;top:20px;right:24px;z-index:2;display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px)}
+.cur-switch button{font:600 12.5px var(--f-body);border:0;background:none;color:var(--hero-muted);padding:6px 11px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.cur-switch button:hover{color:var(--hero-ink)}
+.cur-switch button[aria-pressed="true"]{background:var(--hero-ink);color:var(--night-a)}
+@media (max-width:620px){.cur-switch{position:static;justify-self:start;order:-1}.cur-switch button{padding:6px 9px}}
+
+/* ---------- Автобус / потяг ---------- */
+.seg.mode{justify-self:start;box-shadow:none;background:var(--surface-2);border:1px solid var(--line);flex-wrap:wrap;border-radius:18px}
+.seg.mode button{display:inline-flex;align-items:center;gap:6px}
+.seg.mode svg{width:16px;height:16px}

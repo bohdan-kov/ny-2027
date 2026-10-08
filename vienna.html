@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=20261008c">
+<link rel="stylesheet" href="styles.css?v=20261009">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
     <a class="back" href="index.html#c-vienna">← Усі міста</a>
     <p class="kicker">Обране місто · 6 друзів · 28 грудня → 5 січня</p>
     <h1>Житло у <em>Відні</em></h1>
+    <div class="cur-switch" id="cur" role="group" aria-label="Валюта"></div>
     <ul class="facts" id="facts"></ul>
     <p class="hero-lead" id="lead"></p>
   </div>
@@ -100,15 +101,17 @@
     </div>
     <div>
       <h3>Ціна, рейтинг, відстань</h3>
-      <p>Ціна за всі 8 ночей. Що в неї входить, указано на кожній картці; міський туристичний податок Відня здебільшого не враховано. Рейтинг зведено до 10-бальної шкали (4.5★ = 9.0). Відстань рахується до собору Св. Стефана, «≈» означає, що відома лише назва району.</p>
+      <p>Ціна за всі 8 ночей. Що в неї входить, указано на кожній картці; міський туристичний податок Відня здебільшого не враховано. Інші валюти — за курсом НБУ на 09.10.2026. Рейтинг зведено до 10-бальної шкали (4.5★ = 9.0). Відстань рахується до собору Св. Стефана, «≈» означає, що відома лише назва району.</p>
     </div>
   </section>
 </main>
 
 <aside class="choice" id="choice" aria-label="Обране житло" aria-live="polite" hidden></aside>
 
-<script src="data/vienna.js?v=20261008c"></script>
-<script src="data/transport.js?v=20261008c"></script>
-<script src="vienna-app.js?v=20261008c"></script>
+<script src="currency.js?v=20261009"></script>
+<script src="data/vienna.js?v=20261009"></script>
+<script src="data/transport.js?v=20261009"></script>
+<script src="data/trains.js?v=20261009"></script>
+<script src="vienna-app.js?v=20261009"></script>
 </body>
 </html>

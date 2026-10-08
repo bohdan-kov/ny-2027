@@ -32,6 +32,8 @@ vienna.html         усі варіанти житла у Відні з філь
 data/vienna.js      дані для vienna.html
 data/stays.js       вибране житло (по 2 з Airbnb і Booking) + середні ціни
 data/stays.json     те саме в JSON
+data/trains.js      потяг як альтернатива автобусу (зараз лише Відень), перемикач у розділі міста
+currency.js         валюта показу (EUR/UAH/USD/PLN, курс НБУ), дані завжди в євро
 data/transport.js   маршрути з Києва: рейси, час, ціни, метрики логістики
 data/ny-experience.js  оцінки NY Experience, події 31.12, ярмарки, погода, джерела
 data/raw/           сирі результати пошуку Airbnb і Booking

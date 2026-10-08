@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=20261008c">
+<link rel="stylesheet" href="styles.css?v=20261009">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
   <div class="hero-in">
     <p class="kicker">Новорічна поїздка · 6 друзів · 14 міст на вибір</p>
     <h1>Де зустрінемо <em>2027</em>?</h1>
+    <div class="cur-switch" id="cur" role="group" aria-label="Валюта"></div>
     <ul class="facts">
       <li><span>Дати</span>28 грудня → 5 січня</li>
       <li><span>Ночей</span>8</li>
@@ -61,6 +62,7 @@
     <div>
       <h3>Що входить у ціну</h3>
       <p>Booking показано з податками. Airbnb показано з сервісним збором, але без міського туристичного податку (1–5 € з особи за ніч). Середня ціна рахується без 10% найдешевших і 10% найдорожчих оголошень.</p>
+      <p>Ціни зібрано в євро. Інші валюти перераховано за курсом НБУ на 09.10.2026: 1 € = 50.14 ₴, 1 $ = 44.85 ₴, 1 zł = 11.46 ₴.</p>
     </div>
     <div>
       <h3>Дорога</h3>
@@ -70,10 +72,12 @@
   </section>
 </main>
 
-<script src="data/stays.js?v=20261008c"></script>
-<script src="data/transport.js?v=20261008c"></script>
-<script src="data/ny-experience.js?v=20261008c"></script>
-<script src="data/city-photos.js?v=20261008c"></script>
-<script src="app.js?v=20261008c"></script>
+<script src="currency.js?v=20261009"></script>
+<script src="data/stays.js?v=20261009"></script>
+<script src="data/transport.js?v=20261009"></script>
+<script src="data/trains.js?v=20261009"></script>
+<script src="data/ny-experience.js?v=20261009"></script>
+<script src="data/city-photos.js?v=20261009"></script>
+<script src="app.js?v=20261009"></script>
 </body>
 </html>

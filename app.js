@@ -5,9 +5,24 @@ const NYX = window.NY_EXPERIENCE || {};
 // міста з окремою сторінкою всіх варіантів житла
 const CITY_PAGES = { vienna: 'vienna.html' };
 const ORDER = Object.keys(T);
-ORDER.forEach(c => { T[c].total = [...T[c].out, ...T[c].back].reduce((s, l) => s + l[3], 0); });
+const legSum = r => [...r.out, ...r.back].reduce((s, l) => s + l[3], 0);
+// Потяг замість автобуса (data/trains.js): вибір по місту зберігається в браузері,
+// маршрут потяга підміняє автобусний до всіх розрахунків (ціна, логістика, дод. ночі)
+const TRAINS = window.TRAINS || {};
+let MODE = {};
+try { MODE = JSON.parse(localStorage.getItem('ny27-mode') || '{}') || {}; } catch (e) {}
+const BUS = {};
+ORDER.forEach(c => {
+  BUS[c] = { ...T[c], total: legSum(T[c]) };
+  if (MODE[c] === 'train' && TRAINS[c]) {
+    const r = TRAINS[c];
+    Object.assign(T[c], { out: r.out, back: r.back, hours: r.hours, logi: r.logi, extraNights: r.extraNights || 0, alt: r.note, mode: 'train' });
+  }
+  T[c].total = legSum(T[c]);
+});
 
-const fmt = n => Math.round(n).toLocaleString('uk-UA').replace(/ /g, ' ') + ' €';
+// ціни в даних у євро, показ — у вибраній валюті (currency.js)
+const fmt = (n, d) => CUR.fmt(n, d);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const staysOf = c => [...DATA[c].airbnb, ...DATA[c].booking];
 const minPrice = c => Math.min(...staysOf(c).map(x => x.price));
@@ -57,6 +72,7 @@ const ICON = {
   bus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 18v2M16 18v2"/><circle cx="8" cy="14.5" r=".8" fill="currentColor"/><circle cx="16" cy="14.5" r=".8" fill="currentColor"/></svg>',
   air: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5 3 11l1.5-1.5 7.5 1L16.5 6a2 2 0 0 1 3 3l-4.5 4.5 1 7.5L14.5 22.5 12 15l-3 3v2.5L7.5 22 6 18l-4-1.5L3.5 15H6l3-3"/></svg>',
   pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  train: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 21l-2-4M15 21l2-4"/><circle cx="9" cy="13.5" r=".8" fill="currentColor"/><circle cx="15" cy="13.5" r=".8" fill="currentColor"/></svg>',
   clock: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
 };
 
@@ -108,7 +124,7 @@ function stayCard(x, cheapest) {
       <h3>${esc(x.name)}</h3>
       <div class="rate"><span class="star">★ ${x.rating}</span><span>${x.reviews} відгуків</span><span>${ICON.pin} ${x.dist} км від центру</span></div>
       <div class="info">${esc(x.info)}</div>
-      <div class="foot"><span><b>${pp.toFixed(1)} €</b> з людини за ніч</span><a class="go" href="${x.url}" target="_blank" rel="noopener">Переглянути →</a></div>
+      <div class="foot"><span><b>${fmt(pp, 1)}</b> з людини за ніч</span><a class="go" href="${x.url}" target="_blank" rel="noopener">Переглянути →</a></div>
     </div>
   </article>`;
 }
@@ -123,19 +139,28 @@ function mineBlock(c) {
     <div class="mine-act"><a href="${CITY_PAGES[c]}">Змінити вибір →</a><button type="button" data-clear="${c}">Скасувати вибір і рахувати за найдешевшим</button></div>`;
 }
 
+// перемикач «Автобус / Потяг» для міст, куди є потяг
+function modeSwitch(c) {
+  const tr = TRAINS[c], on = T[c].mode === 'train';
+  return `<div class="seg mode" role="group" aria-label="Транспорт">
+    <button type="button" data-mode="bus" data-city="${c}" aria-pressed="${!on}">${ICON.bus} Автобус / літак · ${fmt(BUS[c].total)}</button>
+    <button type="button" data-mode="train" data-city="${c}" aria-pressed="${on}">${ICON.train} Потяг · ${tr.approx ? '≈' : ''}${fmt(legSum(tr))}</button>
+  </div>`;
+}
+
 function legItem(l) {
   const [when, ...rest] = l[2].split(' · ');
   return `<li class="leg">
-    <span class="ico${l[0] === 'air' ? ' air' : ''}">${l[0] === 'air' ? ICON.air : ICON.bus}</span>
+    <span class="ico${l[0] === 'air' ? ' air' : ''}">${ICON[l[0]] || ICON.bus}</span>
     <div><div class="leg-name">${l[1]}</div><div class="leg-time">${when}${rest.length ? '<br>' + rest.join(' · ') : ''}</div></div>
-    <span class="leg-price">${l[3].toFixed(2)} €</span>
+    <span class="leg-price">${fmt(l[3], 2)}</span>
   </li>`;
 }
 
 function wizzTable(rows) {
   return `<details class="wizz"><summary>Перевірені рейси Wizz Air (${rows.length})</summary><div class="wizz-scroll"><table>
-    <thead><tr><th>Напрямок</th><th>Дата</th><th class="num">Ціна</th><th class="num">≈ €</th><th>Примітка</th></tr></thead>
-    <tbody>${rows.map(r => `<tr${r[4] === 'обраний' ? ' class="pick"' : ''}><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3] == null ? '—' : r[3] + ' €'}</td><td>${r[4]}</td></tr>`).join('')}</tbody>
+    <thead><tr><th>Напрямок</th><th>Дата</th><th class="num">Ціна</th><th class="num">≈ ${CUR.sym}</th><th>Примітка</th></tr></thead>
+    <tbody>${rows.map(r => `<tr${r[4] === 'обраний' ? ' class="pick"' : ''}><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3] == null ? '—' : fmt(r[3])}</td><td>${r[4]}</td></tr>`).join('')}</tbody>
   </table></div><p class="wizz-note">Ціна за 1 особу, лише маленька сумка під сидіння. Дані з календаря цін wizzair.com на 07.10.2026.</p></details>`;
 }
 
@@ -202,7 +227,8 @@ function renderCities() {
       <div class="stays">${stays.map(x => stayCard(x, x.price === minP)).join('')}</div>
       ${CITY_PAGES[c] ? `<a class="all-link" href="${CITY_PAGES[c]}">Усі варіанти житла: ${t.ua} →</a>` : ''}
       <div class="route">
-        <div class="route-head"><h3>Дорога з Києва</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію${t.extraNights ? ` · <b>+${t.extraNights} ніч житла</b>` : ''}</span></div>
+        ${TRAINS[c] ? modeSwitch(c) : ''}
+        <div class="route-head"><h3>Дорога з Києва${t.mode === 'train' ? ' потягом' : ''}</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію${t.extraNights ? ` · <b>+${t.extraNights} ніч житла</b>` : ''}</span></div>
         <div class="dirs">
           <div class="dir"><div class="dir-label">Туди</div><ol class="legs">${t.out.map(legItem).join('')}</ol></div>
           <div class="dir"><div class="dir-label">Назад</div><ol class="legs">${t.back.map(legItem).join('')}</ol></div>
@@ -213,6 +239,14 @@ function renderCities() {
     </section>`;
   }).join('');
 
+  // зміна транспорту перераховує всі оцінки — простіше перезавантажити сторінку на розділі міста
+  document.querySelectorAll('.mode button').forEach(b => b.addEventListener('click', () => {
+    const c = b.dataset.city;
+    if ((MODE[c] || 'bus') === b.dataset.mode) return;
+    if (b.dataset.mode === 'train') MODE[c] = 'train'; else delete MODE[c];
+    try { localStorage.setItem('ny27-mode', JSON.stringify(MODE)); } catch (e) {}
+    location.hash = 'c-' + c; location.reload();
+  }));
   document.querySelectorAll('[data-clear]').forEach(b => b.addEventListener('click', () => {
     delete CHOICE[b.dataset.clear];
     try { localStorage.setItem('ny27-choice', JSON.stringify(CHOICE)); } catch (e) {}
@@ -254,3 +288,5 @@ function snow() {
 }
 
 renderTickets(); renderCities(); snow();
+CUR.mount(document.getElementById('cur'));
+CUR.onChange(() => { renderTickets(); renderCities(); });

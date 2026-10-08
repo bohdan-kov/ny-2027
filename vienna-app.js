@@ -3,7 +3,8 @@ const ITEMS = V.items;
 const STEP = 24;
 const KEY = 'ny27-vienna';
 
-const fmt = n => Math.round(n).toLocaleString('uk-UA').replace(/ /g, ' ') + ' €';
+// ціни в даних у євро, показ — у вибраній валюті (currency.js)
+const fmt = (n, d) => CUR.fmt(n, d);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 const $ = id => document.getElementById(id);
@@ -11,7 +12,11 @@ const median = a => a.length % 2 ? a[a.length >> 1] : (a[a.length / 2 - 1] + a[a
 
 /* ---------- Вибір житла: зберігається в браузері, головна сторінка рахує поїздку з ним ---------- */
 const CITY = 'vienna', CHOICE_KEY = 'ny27-choice';
-const TR = (window.TRANSPORT || {})[CITY] || { out: [], back: [] };
+let MODE = {};
+try { MODE = JSON.parse(localStorage.getItem('ny27-mode') || '{}') || {}; } catch (e) {}
+// маршрут як на головній: потяг, якщо його обрано для міста, інакше автобус
+const TRAIN = MODE[CITY] === 'train' && (window.TRAINS || {})[CITY];
+const TR = TRAIN || (window.TRANSPORT || {})[CITY] || { out: [], back: [] };
 const ROAD = [...TR.out, ...TR.back].reduce((s, l) => s + l[3], 0);  // дорога з особи туди й назад
 const NIGHTS = 8 + (TR.extraNights || 0);
 let CHOICE = {};
@@ -34,7 +39,7 @@ function renderChoice() {
     <dl class="ch-nums">
       <div><dt>Житло, ${NIGHTS} ночей</dt><dd>${fmt(house)}</dd></div>
       <div><dt>Житло з особи</dt><dd>${fmt(housePP)}</dd></div>
-      <div><dt>Дорога з особи</dt><dd>${fmt(ROAD)}</dd></div>
+      <div><dt>Дорога з особи${TRAIN ? ', потяг' : ''}</dt><dd>${fmt(ROAD)}</dd></div>
       <div class="hl"><dt>Разом з особи</dt><dd>${fmt(pp)}</dd></div>
       <div><dt>На компанію</dt><dd>${fmt(pp * 6)}</dd></div>
     </dl>
@@ -107,7 +112,7 @@ function card(x) {
       <h3>${esc(x.n)}</h3>
       <div class="rate">${rate}${x.d != null ? `<span title="${x.da ? 'приблизно, за центром району' : ''}">${PIN} ${x.da ? '≈' : ''}${x.d} км</span>` : ''}${x.k ? `<span>${esc(x.k)}</span>` : ''}</div>
       <div class="info">${esc(x.i)}</div>
-      <div class="foot"><span><b>${pp.toFixed(1)} €</b> з людини за ніч</span><a class="go" href="${esc(x.u)}" target="_blank" rel="noopener">Переглянути →</a></div>
+      <div class="foot"><span><b>${fmt(pp, 1)}</b> з людини за ніч</span><a class="go" href="${esc(x.u)}" target="_blank" rel="noopener">Переглянути →</a></div>
       ${links.length > 1 ? `<div class="alt">Також: ${links.slice(1).map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(' · ')}</div>` : ''}
       <button type="button" class="pick" data-id="${esc(x.id)}" aria-pressed="${on}">${on ? '✓ Обрано' : 'Обрати це житло'}</button>
     </div>
@@ -142,4 +147,6 @@ $('more').addEventListener('click', () => { shown += STEP; render(); });
 const BY_ID = new Map(ITEMS.map(x => [x.id, x]));
 $('list').addEventListener('click', e => { const b = e.target.closest('.pick'); if (b) choose(BY_ID.get(b.dataset.id)); });
 
+CUR.mount($('cur'));
+CUR.onChange(render);
 render();
