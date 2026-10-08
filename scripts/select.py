@@ -34,7 +34,7 @@ for city in C:
         tot=price+tax; allp.append(tot)
         sm=re.match(r'Scored ([\d.]+)\|.*\|([\d,]+) reviews?',score or '')
         r,n=(float(sm.group(1)),int(sm.group(2).replace(',',''))) if sm else (None,0)
-        if r and r>=7.0 and n>=5 and places(unit)>=6:
+        if r and r>=6.0 and n>=5 and places(unit)>=6:
             bk.append(dict(src='Booking',name=name,kind='',price=tot,taxnote='з податками',rating=f"{r:.1f}",reviews=n,dist=round(d,1),info=unit.replace('Recommended for your group | ','').split(' | Free cancellation')[0].split(' | No prepayment')[0],url='https://www.booking.com/hotel/'+url+'?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR',img=img))
     allp.sort(); t=allp[len(allp)//10: len(allp)-len(allp)//10]
     ab.sort(key=lambda x:x['price']); bk.sort(key=lambda x:x['price'])

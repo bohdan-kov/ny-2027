@@ -62,63 +62,63 @@
   ]
  },
  "vienna": {
-  "n": 262,
-  "mean": 3757,
-  "median": 3496,
-  "min": 1714,
+  "n": 288,
+  "mean": 3665,
+  "median": 3362,
+  "min": 1819,
   "airbnb": [
-   {
-    "src": "Airbnb",
-    "name": "Exclusive Apt for 6–Balcony, 2BR, Private Parking",
-    "kind": "Apartment in Floridsdorf",
-    "price": 2082,
-    "taxnote": "без туристичного збору",
-    "rating": "4.87",
-    "reviews": 69,
-    "dist": 6.6,
-    "info": "2 bedrooms · 3 beds · 1.5 baths",
-    "url": "https://www.airbnb.com.ua/rooms/1433430959137757356?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "img/vienna-1.jpg"
-   },
    {
     "src": "Airbnb",
     "name": "2BR Apartment with bay window - Schönbrunn View",
     "kind": "Apartment in Rudolfsheim-Fünfhaus",
-    "price": 2221,
+    "price": 2153,
     "taxnote": "без туристичного збору",
     "rating": "4.72",
     "reviews": 65,
     "dist": 4.7,
     "info": "2 bedrooms · 3 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1400156094354250098?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "img/vienna-1.jpg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Spacious apartment for small groups",
+    "kind": "Apartment in Ottakring",
+    "price": 2170,
+    "taxnote": "без туристичного збору",
+    "rating": "4.63",
+    "reviews": 76,
+    "dist": 3.2,
+    "info": "3 bedrooms · 6 single beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/740999971933552785?check_in=2026-12-28&check_out=2027-01-05&adults=6",
     "img": "img/vienna-2.jpg"
    }
   ],
   "booking": [
    {
     "src": "Booking",
-    "name": "Savoir Vivre Apartments Rosinagasse",
-    "kind": "",
-    "price": 1761,
-    "taxnote": "з податками",
-    "rating": "7.4",
-    "reviews": 34,
-    "dist": 3.4,
-    "info": "Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 101 m² | 4 beds (1 sofa bed, 3 large doubles)",
-    "url": "https://www.booking.com/hotel/at/2-zimmer-leisure-suite.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "img/vienna-3.jpg"
-   },
-   {
-    "src": "Booking",
     "name": "2 Bedroom Apartments, 18 Min to the City Center, Smart TV",
     "kind": "",
-    "price": 1859,
+    "price": 1819,
     "taxnote": "з податками",
     "rating": "7.4",
     "reviews": 11,
     "dist": 4.3,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/at/modern-2br-18-min-to-center-smart-tv.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "img/vienna-3.jpg"
+   },
+   {
+    "src": "Booking",
+    "name": "Serviced Apartment Neuwaldegg",
+    "kind": "",
+    "price": 2005,
+    "taxnote": "з податками",
+    "rating": "8.0",
+    "reviews": 36,
+    "dist": 7.1,
+    "info": "Two-Bedroom Superior Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 80 m² | 3 beds (1 sofa bed, 2 large doubles)",
+    "url": "https://www.booking.com/hotel/at/tempora-homes-serviced-apartments-neuwaldegg.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
     "img": "img/vienna-4.jpg"
    }
   ]

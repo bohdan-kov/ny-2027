@@ -35,6 +35,19 @@
   "booking": [
    {
     "src": "Booking",
+    "name": "Nets Inn apartments - Robida",
+    "kind": "",
+    "price": 1852,
+    "taxnote": "з податками",
+    "rating": "6.0",
+    "reviews": 271,
+    "dist": 3.8,
+    "info": "Apartment - Ground Floor | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 70 m² | 3 beds (2 doubles, 1 sofa bed)",
+    "url": "https://www.booking.com/hotel/fr/nets-inn-apartments-robida.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/546905072.webp"
+   },
+   {
+    "src": "Booking",
     "name": "Trendy 2 Rooms Paris 13",
     "kind": "",
     "price": 2060,
@@ -45,81 +58,68 @@
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 40 m² | 3 beds (1 double, 2 sofa beds)",
     "url": "https://www.booking.com/hotel/fr/entire-apartment-for-6-people.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
     "img": "https://cf.bstatic.com/xdata/images/hotel/square600/402169769.webp"
-   },
-   {
-    "src": "Booking",
-    "name": "Apt cosy pour 6 - Paris Expo P. de Versailles",
-    "kind": "",
-    "price": 2218,
-    "taxnote": "з податками",
-    "rating": "8.2",
-    "reviews": 5,
-    "dist": 5.4,
-    "info": "Apartment | Entire apartment • 2 bedrooms • 1 living room • 2 bathrooms • 1 kitchen • 75 m² | 4 beds (2 singles, 1 double, 1 sofa bed)",
-    "url": "https://www.booking.com/hotel/fr/spacious-flat-for-6-paris-expo-porte-de-versailles.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/831887842.webp"
    }
   ]
  },
  "vienna": {
-  "n": 262,
-  "mean": 3757,
-  "median": 3496,
-  "min": 1714,
+  "n": 288,
+  "mean": 3665,
+  "median": 3362,
+  "min": 1819,
   "airbnb": [
-   {
-    "src": "Airbnb",
-    "name": "Exclusive Apt for 6–Balcony, 2BR, Private Parking",
-    "kind": "Apartment in Floridsdorf",
-    "price": 2082,
-    "taxnote": "без туристичного збору",
-    "rating": "4.87",
-    "reviews": 69,
-    "dist": 6.6,
-    "info": "2 bedrooms · 3 beds · 1.5 baths",
-    "url": "https://www.airbnb.com.ua/rooms/1433430959137757356?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-1433430959137757356/original/998fe881-9441-4900-b527-1115f3b10e47.jpeg"
-   },
    {
     "src": "Airbnb",
     "name": "2BR Apartment with bay window - Schönbrunn View",
     "kind": "Apartment in Rudolfsheim-Fünfhaus",
-    "price": 2221,
+    "price": 2153,
     "taxnote": "без туристичного збору",
     "rating": "4.72",
     "reviews": 65,
     "dist": 4.7,
     "info": "2 bedrooms · 3 beds · 1.5 baths",
     "url": "https://www.airbnb.com.ua/rooms/1400156094354250098?check_in=2026-12-28&check_out=2027-01-05&adults=6",
-    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1400156094354250098/original/127e7c36-9cfe-4dae-808a-d5bc26b5512a.jpeg"
+    "img": "https://a0.muscache.com/im/pictures/miso/Hosting-1400156094354250098/original/17329c03-cbad-4a62-97a6-ad8232b27157.jpeg"
+   },
+   {
+    "src": "Airbnb",
+    "name": "Spacious apartment for small groups",
+    "kind": "Apartment in Ottakring",
+    "price": 2170,
+    "taxnote": "без туристичного збору",
+    "rating": "4.63",
+    "reviews": 76,
+    "dist": 3.2,
+    "info": "3 bedrooms · 6 single beds · 1 bath",
+    "url": "https://www.airbnb.com.ua/rooms/740999971933552785?check_in=2026-12-28&check_out=2027-01-05&adults=6",
+    "img": "https://a0.muscache.com/im/pictures/hosting/Hosting-740999971933552785/original/4b900c76-a198-490f-afd3-8a7437487bf2.png"
    }
   ],
   "booking": [
    {
     "src": "Booking",
-    "name": "Savoir Vivre Apartments Rosinagasse",
-    "kind": "",
-    "price": 1761,
-    "taxnote": "з податками",
-    "rating": "7.4",
-    "reviews": 34,
-    "dist": 3.4,
-    "info": "Apartment | Entire apartment • 3 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 101 m² | 4 beds (1 sofa bed, 3 large doubles)",
-    "url": "https://www.booking.com/hotel/at/2-zimmer-leisure-suite.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/446719690.webp"
-   },
-   {
-    "src": "Booking",
     "name": "2 Bedroom Apartments, 18 Min to the City Center, Smart TV",
     "kind": "",
-    "price": 1859,
+    "price": 1819,
     "taxnote": "з податками",
     "rating": "7.4",
     "reviews": 11,
     "dist": 4.3,
     "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 60 m² | 3 beds (1 sofa bed, 2 large doubles)",
     "url": "https://www.booking.com/hotel/at/modern-2br-18-min-to-center-smart-tv.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/853687623.webp"
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/853687623.webp?k=ef0b9ce44d8248889e69e2fed4e9f7d04cfea1fbec2968340c6fd41e39dab28c&o="
+   },
+   {
+    "src": "Booking",
+    "name": "Serviced Apartment Neuwaldegg",
+    "kind": "",
+    "price": 2005,
+    "taxnote": "з податками",
+    "rating": "8.0",
+    "reviews": 36,
+    "dist": 7.1,
+    "info": "Two-Bedroom Superior Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 80 m² | 3 beds (1 sofa bed, 2 large doubles)",
+    "url": "https://www.booking.com/hotel/at/tempora-homes-serviced-apartments-neuwaldegg.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/676981807.webp?k=c2e19ff52d6a76aa9fbfdfa28a64047759fd667b0011edd5012e69c4a842bfba&o="
    }
   ]
  },
@@ -172,16 +172,16 @@
    },
    {
     "src": "Booking",
-    "name": "Erbenova Apartments",
+    "name": "Pension Easy Journey",
     "kind": "",
-    "price": 2397,
+    "price": 1920,
     "taxnote": "з податками",
-    "rating": "7.2",
-    "reviews": 1088,
-    "dist": 2.9,
-    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 50 m² | 6 beds (3 singles, 2 doubles, 1 sofa bed)",
-    "url": "https://www.booking.com/hotel/cz/erbenova-apartments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/440966529.webp"
+    "rating": "6.6",
+    "reviews": 220,
+    "dist": 2.4,
+    "info": "Two-Bedroom Apartment (6 Adults) | Entire apartment • 2 bedrooms • 1 bathroom • 42 m² | 4 beds (2 singles, 2 large doubles) | Breakfast included",
+    "url": "https://www.booking.com/hotel/cz/pension-easy-journey.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/3183313.webp"
    }
   ]
  },
@@ -345,29 +345,29 @@
   "booking": [
    {
     "src": "Booking",
-    "name": "Budget Apartment by Hi5-Kiraly 99",
+    "name": "L3 City Centre Stylish Flat AC",
     "kind": "",
-    "price": 1679,
+    "price": 1402,
     "taxnote": "з податками",
-    "rating": "7.2",
-    "reviews": 174,
-    "dist": 1.5,
-    "info": "Deluxe Apartment | Entire apartment • 2 bedrooms • 1 bathroom • 1 kitchen • 55 m² | 3 beds (2 doubles, 1 sofa bed)",
-    "url": "https://www.booking.com/hotel/hu/kiraly-street-apartments.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/255929141.webp"
+    "rating": "6.1",
+    "reviews": 98,
+    "dist": 1.2,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 bathroom • 1 kitchen • 60 m² | 4 beds (2 doubles, 2 sofa beds)",
+    "url": "https://www.booking.com/hotel/hu/l3-city-centre-stylish-flat-ac.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/581685714.webp"
    },
    {
     "src": "Booking",
-    "name": "New Faces Design Apartment in Downtown",
+    "name": "L5 City Centre Elegancy with AC",
     "kind": "",
-    "price": 1998,
+    "price": 1649,
     "taxnote": "з податками",
-    "rating": "8.7",
-    "reviews": 41,
-    "dist": 0.2,
-    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 61 m² | 3 beds (1 sofa bed, 2 large doubles)",
-    "url": "https://www.booking.com/hotel/hu/new-faces-design-apartment-in-downtown.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/516376756.webp"
+    "rating": "6.2",
+    "reviews": 102,
+    "dist": 1.2,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 bathroom • 70 m² | 4 beds (2 doubles, 2 sofa beds)",
+    "url": "https://www.booking.com/hotel/hu/l5-city-centre-elegancy-with-ac.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/581706892.webp"
    }
   ]
  },
@@ -482,16 +482,16 @@
    },
    {
     "src": "Booking",
-    "name": "Le Molsheim - Duplex proche Musée d'Art Moderne",
+    "name": "La Halte Strasbourgeoise - Superbe appt près de la Petite France",
     "kind": "",
-    "price": 2205,
+    "price": 2173,
     "taxnote": "з податками",
-    "rating": "7.4",
-    "reviews": 19,
-    "dist": 1.1,
-    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 120 m² | 4 beds (1 single, 1 sofa bed, 2 large doubles)",
-    "url": "https://www.booking.com/hotel/fr/le-molsheim-grand-appartement-proche-musee-dart-moderne.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
-    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/503387920.webp"
+    "rating": "6.8",
+    "reviews": 26,
+    "dist": 0.6,
+    "info": "Two-Bedroom Apartment | Entire apartment • 2 bedrooms • 1 living room • 1 bathroom • 1 kitchen • 74 m² | 3 beds (2 doubles, 1 sofa bed)",
+    "url": "https://www.booking.com/hotel/fr/dragon-rdc-superbe-appt-pres-de-la-petite-france.en-gb.html?checkin=2026-12-28&checkout=2027-01-05&group_adults=6&no_rooms=1&selected_currency=EUR",
+    "img": "https://cf.bstatic.com/xdata/images/hotel/square600/871063713.webp"
    }
   ]
  },
