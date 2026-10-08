@@ -2,6 +2,8 @@ const DATA = window.STAYS;
 const T = window.TRANSPORT;
 const PH = window.CITY_PHOTOS || {};
 const NYX = window.NY_EXPERIENCE || {};
+// міста з окремою сторінкою всіх варіантів житла
+const CITY_PAGES = { vienna: 'vienna.html' };
 const ORDER = Object.keys(T);
 ORDER.forEach(c => { T[c].total = [...T[c].out, ...T[c].back].reduce((s, l) => s + l[3], 0); });
 
@@ -9,9 +11,14 @@ const fmt = n => Math.round(n).toLocaleString('uk-UA').replace(/ /g, ' ') + ' �
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const staysOf = c => [...DATA[c].airbnb, ...DATA[c].booking];
 const minPrice = c => Math.min(...staysOf(c).map(x => x.price));
-const housing = (c, mode) => mode === 'avg' ? DATA[c].mean : minPrice(c);
+// житло, обране на сторінці міста (vienna.html), зберігається в браузері; якщо є — рахуємо поїздку з ним
+let CHOICE = {};
+try { CHOICE = JSON.parse(localStorage.getItem('ny27-choice') || '{}') || {}; } catch (e) {}
+const chosen = c => CITY_PAGES[c] && CHOICE[c] && CHOICE[c].p ? CHOICE[c] : null;
+const stayPrice = c => chosen(c) ? chosen(c).p : minPrice(c);
+const housing = (c, mode) => mode === 'avg' ? DATA[c].mean : stayPrice(c);
 // житло на 8 ночей + додаткові ночі, якщо цього вимагає розклад дороги
-const housingPP = c => minPrice(c) * (8 + (T[c].extraNights || 0)) / 8 / 6;
+const housingPP = c => stayPrice(c) * (8 + (T[c].extraNights || 0)) / 8 / 6;
 const perPerson = c => housingPP(c) + T[c].total;
 
 /* ---------- Оцінка поїздки ----------
@@ -64,7 +71,10 @@ function renderTickets() {
   const rows = [...ORDER].sort((a, b) => sortBy === 'price' ? perPerson(a) - perPerson(b) : SCORE[b].overall - SCORE[a].overall);
   document.getElementById('tickets').innerHTML = rows.map((c, i) => {
     const s = SCORE[c];
-    return `<button type="button" class="ticket${i === 0 ? ' first' : ''}" data-city="${c}" aria-label="${T[c].ua}: оцінка ${Math.round(s.overall)} зі 100, ${fmt(perPerson(c))} на людину">
+    // місто з окремою сторінкою житла — квиток веде на неї, інші прокручують до розділу міста
+    const page = CITY_PAGES[c];
+    const label = `${T[c].ua}: оцінка ${Math.round(s.overall)} зі 100, ${fmt(perPerson(c))} на людину${page ? '. Відкрити всі варіанти житла' : ''}`;
+    return `<${page ? `a href="${page}"` : 'button type="button"'} class="ticket${i === 0 ? ' first' : ''}${page ? ' has-page' : ''}" data-city="${c}" aria-label="${label}">
       <div class="t-top">
         <div class="t-name">${PH[c] ? `<img class="t-thumb" src="${PH[c].img}" alt="" loading="lazy">` : ''}<div><div class="t-rank">№ ${i + 1}</div><div class="t-city">${T[c].ua}</div><div class="t-cc">${T[c].cc}</div></div></div>
         ${i === 0 ? `<span class="t-badge">${sortBy === 'price' ? 'найдешевше' : 'найкраще для нас'}</span>` : ''}
@@ -72,9 +82,10 @@ function renderTickets() {
       <div class="t-total"><b>${Math.round(s.overall)}<small>/100</small></b><span>оцінка поїздки</span></div>
       <div class="mbs">${miniBar('NY', s.nyTotal, 'ny')}${miniBar('Логістика', s.logTotal, 'lg')}${miniBar('Ціна', s.price, 'pr')}</div>
       <div class="t-split"><span><b>${fmt(perPerson(c))}</b> на людину</span><span class="t-time">${ICON.clock}${T[c].hours}</span></div>
-    </button>`;
+      ${page ? `<span class="t-go">${chosen(c) ? `Обране житло: ${esc(chosen(c).n)}` : 'Усі варіанти житла →'}</span>` : ''}
+    </${page ? 'a' : 'button'}>`;
   }).join('');
-  document.querySelectorAll('.ticket').forEach(b => b.addEventListener('click', () =>
+  document.querySelectorAll('button.ticket').forEach(b => b.addEventListener('click', () =>
     document.getElementById('c-' + b.dataset.city).scrollIntoView()));
   document.getElementById('sort-score').setAttribute('aria-pressed', sortBy === 'score');
   document.getElementById('sort-price').setAttribute('aria-pressed', sortBy === 'price');
@@ -100,6 +111,16 @@ function stayCard(x, cheapest) {
       <div class="foot"><span><b>${pp.toFixed(1)} €</b> з людини за ніч</span><a class="go" href="${x.url}" target="_blank" rel="noopener">Переглянути →</a></div>
     </div>
   </article>`;
+}
+
+// обране житло з окремої сторінки міста — у форматі stayCard
+function mineBlock(c) {
+  const x = chosen(c);
+  const card = stayCard({ src: x.s, name: x.n, price: x.p, taxnote: x.t, rating: x.r || '—', reviews: x.v || 0, dist: x.d ?? '—', info: x.i, url: x.u, img: x.im }, false)
+    .replace('<span class="pill src">', '<span class="pill mine">ваш вибір</span><span class="pill src">')
+    .replace('<span class="star">★ —</span><span>0 відгуків</span>', '<span>ще без оцінки</span>');
+  return `<div class="stays">${card}</div>
+    <div class="mine-act"><a href="${CITY_PAGES[c]}">Змінити вибір →</a><button type="button" data-clear="${c}">Скасувати вибір і рахувати за найдешевшим</button></div>`;
 }
 
 function legItem(l) {
@@ -160,6 +181,7 @@ function renderCities() {
     const d = DATA[c], t = T[c], stays = staysOf(c), minP = minPrice(c);
     return `<section class="city" id="c-${c}" aria-labelledby="h-${c}">
       <div class="cover${PH[c] ? '' : ' no-photo'}">
+        ${CITY_PAGES[c] ? `<a class="cover-link" href="${CITY_PAGES[c]}" aria-label="${t.ua}: усі варіанти житла"></a><span class="cover-go">Усі варіанти житла →</span>` : ''}
         ${PH[c] ? `<img src="${PH[c].img}" alt="${t.ua} у новорічні свята" loading="lazy">` : ''}
         <div class="cover-text">
           <span class="city-no">№ ${i + 1}</span>
@@ -170,13 +192,15 @@ function renderCities() {
         ${PH[c] ? `<a class="credit" href="${PH[c].source}" target="_blank" rel="noopener">Фото: ${esc(PH[c].author)}, ${PH[c].license}</a>` : ''}
       </div>
       <div class="kpis">
-        <div class="kpi"><b>${fmt(minP)}</b><span>найдешевше житло</span></div>
+        <div class="kpi${chosen(c) ? ' hl-soft' : ''}"><b>${fmt(stayPrice(c))}</b><span>${chosen(c) ? 'обране житло' : 'найдешевше житло'}</span></div>
         <div class="kpi"><b>${fmt(d.mean)}</b><span>середня ціна житла</span></div>
         <div class="kpi"><b>${fmt(t.total)}</b><span>дорога з особи</span></div>
         <div class="kpi hl"><b>${fmt(perPerson(c))}</b><span>разом на людину${t.extraNights ? ' (з дод. ніччю)' : ''}</span></div>
       </div>
       ${scoreCard(c)}
+      ${chosen(c) ? mineBlock(c) : ''}
       <div class="stays">${stays.map(x => stayCard(x, x.price === minP)).join('')}</div>
+      ${CITY_PAGES[c] ? `<a class="all-link" href="${CITY_PAGES[c]}">Усі варіанти житла: ${t.ua} →</a>` : ''}
       <div class="route">
         <div class="route-head"><h3>Дорога з Києва</h3><span class="sum"><b>${fmt(t.total)}</b> з особи туди й назад · ${fmt(t.total * 6)} на компанію${t.extraNights ? ` · <b>+${t.extraNights} ніч житла</b>` : ''}</span></div>
         <div class="dirs">
@@ -188,6 +212,12 @@ function renderCities() {
       </div>
     </section>`;
   }).join('');
+
+  document.querySelectorAll('[data-clear]').forEach(b => b.addEventListener('click', () => {
+    delete CHOICE[b.dataset.clear];
+    try { localStorage.setItem('ny27-choice', JSON.stringify(CHOICE)); } catch (e) {}
+    location.reload();
+  }));
 
   // підсвічування поточного міста в навігації
   const links = [...document.querySelectorAll('.cities-nav a')];

@@ -57,7 +57,8 @@ for key,q in CITIES.items():
             tax=euro(' '.join(text(c,'taxes-and-charges'))) or 0
             im=re.search(r'<img[^>]*src="([^"]+)"[^>]*data-testid="image"',c) or re.search(r'<img[^>]*data-testid="image"[^>]*src="([^"]+)"',c)
             img=html.unescape(im.group(1)) if im else None
-            cards.append([name,m.group(1),dist,score,unit,price,tax,img])
+            addr=' '.join(text(c,'address-link')[:1])
+            cards.append([name,m.group(1),dist,score,unit,price,tax,img,addr])
         if len(chunks)<25: break
         time.sleep(1)
     res[key]=dict(h1=h1,cards=cards)

@@ -26,6 +26,10 @@
 index.html          сторінка
 styles.css          стилі (світла й темна тема)
 app.js              рейтинг, картки міст, маршрути
+vienna.html         усі варіанти житла у Відні з фільтрами (vienna-app.js)
+                    кнопка «Обрати це житло» зберігає вибір у браузері (localStorage `ny27-choice`),
+                    головна рахує Відень за обраним житлом замість найдешевшого
+data/vienna.js      дані для vienna.html
 data/stays.js       вибране житло (по 2 з Airbnb і Booking) + середні ціни
 data/stays.json     те саме в JSON
 data/transport.js   маршрути з Києва: рейси, час, ціни, метрики логістики
@@ -41,8 +45,15 @@ scripts/            скрипти збору даних
 
 1. Airbnb: `python3 scripts/airbnb.py data/raw/airbnb.json` (≈10 хв).
 2. Booking збирався через Playwright, результат у `data/raw/booking.json`.
-3. Відбір і середні ціни: `python3 scripts/select.py`, результат у `data/raw/selected.json`.
-4. Транспорт: `bash scripts/ryanair.sh`, `bash scripts/ryanair_new_cities.sh`, `bash scripts/flixbus_*.sh`. Ціни Wizz Air беруться з календаря цін на wizzair.com через браузер (Playwright), бо пошук рейсів закритий антибот-захистом. Знайдені рейси вручну внесіть у `data/transport.js`.
+3. Усі варіанти у Відні (`vienna.html`), сирі дані в `data/raw/vienna_*.json`:
+   - Airbnb: `python3 -I scripts/airbnb.py data/raw/vienna_airbnb.json vienna --all` (по цінових діапазонах).
+   - Booking: повна видача з фільтром «6+», прокручена в Playwright, розбір `scripts/booking.py` → `data/raw/vienna_booking.json`.
+   - Vrbo / FeWo-direkt (спільний каталог): видача fewo-direkt.de по сторінках у Playwright → `python3 -I scripts/fewo.py <картки.json> data/raw/vienna_fewo.json`.
+   - HomeToGo: `python3 -I scripts/hometogo.py`; Holidu: `python3 -I scripts/holidu.py data/raw/vienna_holidu.json`; Interhome: `python3 -I scripts/interhome.py data/raw/vienna_interhome.json`.
+   - willhaben: `python3 -I scripts/willhaben.py data/raw/vienna_willhaben.json` — лише для перевірки, на сторінку не йде.
+   - Зведення й дедуплікація: `python3 -I scripts/vienna.py` → `data/vienna.js`.
+4. Відбір і середні ціни: `python3 scripts/select.py`, результат у `data/raw/selected.json`.
+5. Транспорт: `bash scripts/ryanair.sh`, `bash scripts/ryanair_new_cities.sh`, `bash scripts/flixbus_*.sh`. Ціни Wizz Air беруться з календаря цін на wizzair.com через браузер (Playwright), бо пошук рейсів закритий антибот-захистом. Знайдені рейси вручну внесіть у `data/transport.js`.
 
 ## Критерії відбору житла
 

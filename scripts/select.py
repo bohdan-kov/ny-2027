@@ -26,7 +26,7 @@ for city in C:
         if r and r>=4.6 and n>=5 and bedsn>=3:
             ab.append(dict(src='Airbnb',name=l['name'],kind=l['title'],price=l['total'],taxnote='без туристичного збору',rating=f"{r:.2f}",reviews=n,dist=round(d,1),info=' · '.join(info),url=l['url'],img=l['pic']))
     for c in b[city]['cards']:
-        name,url,dist,score,unit,price,tax,img=c
+        name,url,dist,score,unit,price,tax,img=c[:8]
         if not price: continue
         m=re.search(r'(\d+) bedroom',unit); br=int(m.group(1)) if m else 0
         dm=re.match(r'([\d.]+)\s*(km|m)',dist or ''); d=float(dm.group(1))/(1000 if dm and dm.group(2)=='m' else 1) if dm else 99

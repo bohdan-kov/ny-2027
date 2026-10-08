@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Житло у Відні</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=20261008c">
+</head>
+<body>
+
+<header class="hero hero-sm">
+  <div class="hero-in">
+    <a class="back" href="index.html#c-vienna">← Усі міста</a>
+    <p class="kicker">Обране місто · 6 друзів · 28 грудня → 5 січня</p>
+    <h1>Житло у <em>Відні</em></h1>
+    <ul class="facts" id="facts"></ul>
+    <p class="hero-lead" id="lead"></p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="filters" aria-label="Фільтри">
+    <div class="f-row">
+      <div class="seg" role="group" aria-label="Джерело" id="f-src"></div>
+      <label class="f-search"><span class="sr">Пошук</span><input type="search" id="f-q" placeholder="Назва або район"></label>
+    </div>
+    <div class="f-grid">
+      <label class="f-price">
+        <span>Ціна за 8 ночей до <b id="f-price-v"></b></span>
+        <input type="range" id="f-price" step="100">
+      </label>
+      <label><span>Рейтинг від</span>
+        <select id="f-rate">
+          <option value="0">будь-який</option>
+          <option value="7">7.0 / 3.5★</option>
+          <option value="8">8.0 / 4.0★</option>
+          <option value="9">9.0 / 4.5★</option>
+          <option value="9.4">9.4 / 4.7★</option>
+        </select>
+      </label>
+      <label><span>Від центру до</span>
+        <select id="f-dist">
+          <option value="99">будь-яка</option>
+          <option value="2">2 км</option>
+          <option value="3">3 км</option>
+          <option value="5">5 км</option>
+          <option value="7">7 км</option>
+          <option value="9">9 км</option>
+        </select>
+      </label>
+      <label><span>Спалень від</span>
+        <select id="f-br">
+          <option value="0">будь-яка</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </label>
+      <label><span>Ліжок від</span>
+        <select id="f-beds">
+          <option value="0">будь-яка</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label><span>Сортування</span>
+        <select id="f-sort">
+          <option value="price">дешевші</option>
+          <option value="-price">дорожчі</option>
+          <option value="rate">за рейтингом</option>
+          <option value="dist">ближчі до центру</option>
+        </select>
+      </label>
+    </div>
+    <div class="f-row f-foot">
+      <label class="chk"><input type="checkbox" id="f-rev"> Лише з відгуками (від 5)</label>
+      <p class="f-count" id="count" aria-live="polite"></p>
+      <button type="button" class="f-reset" id="f-reset">Скинути фільтри</button>
+    </div>
+  </section>
+
+  <div class="stays" id="list"></div>
+  <p class="empty" id="empty" hidden>Нічого не знайдено. Спробуйте послабити фільтри.</p>
+  <div class="more-wrap"><button type="button" class="more" id="more" hidden></button></div>
+
+  <section class="notes" aria-label="Про дані">
+    <div>
+      <h3>Звідки дані</h3>
+      <p>Ціле житло на 6 дорослих на 28.12.2026–05.01.2027 з Airbnb, Booking, Vrbo (той самий каталог, що й FeWo-direkt), Interhome, а також агрегаторів HomeToGo і Holidu. На Booking лише варіанти з оцінкою від 6 або ще без оцінки. Willhaben переглянуто, але там лише довгострокова оренда, подобово на 6 гостей нічого немає.</p>
+    </div>
+    <div>
+      <h3>Дублікати</h3>
+      <p>HomeToGo і Holidu здебільшого показують оголошення Booking і Vrbo. Такі пропозиції прибрано, бо вони вже є з першоджерела. Лишилися тільки власні оголошення агрегаторів і Expedia. Однакове житло з різних платформ об'єднано, інші ціни подано рядком «Також».</p>
+    </div>
+    <div>
+      <h3>Ціна, рейтинг, відстань</h3>
+      <p>Ціна за всі 8 ночей. Що в неї входить, указано на кожній картці; міський туристичний податок Відня здебільшого не враховано. Рейтинг зведено до 10-бальної шкали (4.5★ = 9.0). Відстань рахується до собору Св. Стефана, «≈» означає, що відома лише назва району.</p>
+    </div>
+  </section>
+</main>
+
+<aside class="choice" id="choice" aria-label="Обране житло" aria-live="polite" hidden></aside>
+
+<script src="data/vienna.js?v=20261008c"></script>
+<script src="data/transport.js?v=20261008c"></script>
+<script src="vienna-app.js?v=20261008c"></script>
+</body>
+</html>

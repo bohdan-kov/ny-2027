@@ -251,3 +251,81 @@ i.ny{background:var(--ny)} i.lg{background:var(--lg)} i.pr{background:var(--pr)}
 
 .ticket .t-badge{position:absolute;top:-11px;right:16px;box-shadow:0 2px 8px rgba(29,32,54,.12)}
 .score{align-items:start}
+
+/* ---------- Сторінка міста: усі варіанти житла ---------- */
+.hero-sm .hero-in{padding-block:36px 48px;gap:16px}
+.back{justify-self:start;color:var(--hero-muted);text-decoration:none;font-size:14px;font-weight:600}
+.back:hover{color:var(--hero-ink)}
+.all-link{justify-self:start;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--bg)}
+.all-link:hover{opacity:.88}
+.filters{position:relative;margin-block:-28px 24px;padding:18px 20px;border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);display:grid;gap:14px}
+.f-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.filters .seg{box-shadow:none;background:var(--surface-2);border:1px solid var(--line)}
+.f-search{flex:1 1 220px;max-width:360px}
+.f-search input,.filters select{width:100%;font:500 14px var(--f-body);color:var(--ink);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.f-grid{display:grid;grid-template-columns:2fr repeat(5,minmax(0,1fr));gap:12px}
+@media (max-width:1040px){.f-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.f-price{grid-column:1/-1}}
+@media (max-width:520px){.f-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.f-grid label{display:grid;gap:6px;min-width:0}
+.f-grid label>span{font-size:12px;color:var(--muted)}
+.f-grid label>span b{color:var(--ink)}
+.f-price input{width:100%;accent-color:var(--pine)}
+.f-foot{border-top:1px solid var(--line);padding-top:12px}
+.chk{display:inline-flex;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+.chk input{accent-color:var(--pine);width:16px;height:16px}
+.f-count{margin:0;font-size:14px;color:var(--muted)}
+.f-count b{color:var(--ink)}
+.f-reset{font:600 13px var(--f-body);border:0;background:none;color:var(--pine);cursor:pointer;padding:6px 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+.more-wrap{display:flex;justify-content:center;margin-top:24px}
+.more{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:12px 22px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
+.more:hover{box-shadow:var(--shadow-hover)}
+.filters .seg{flex-wrap:wrap;border-radius:18px}
+.seg button small{font-weight:500;opacity:.6;margin-left:2px}
+.alt{font-size:12px;color:var(--muted)}
+.alt a{color:var(--pine);text-decoration:none}
+.alt a:hover{text-decoration:underline}
+/* Місто з окремою сторінкою житла: квиток і обкладинка ведуть на неї */
+.ticket.has-page{color:inherit;text-decoration:none}
+.t-go{font-size:13px;font-weight:700;color:var(--pine);padding-top:10px;border-top:1px solid var(--line)}
+.cover-link{position:absolute;inset:0;z-index:2}
+.cover-go{position:absolute;z-index:2;top:16px;left:16px;pointer-events:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.92);color:#1D2036;transition:background .2s}
+.cover:has(.cover-link:hover) .cover-go{background:#F2D18C}
+.cover .credit{z-index:3}
+
+/* ---------- Вибір житла ---------- */
+.pick{margin-top:10px;font:600 13.5px var(--f-body);border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:9px 12px;border-radius:12px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pick:hover{border-color:var(--gold)}
+.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1D2036}
+.stay.chosen{box-shadow:0 0 0 2px var(--gold),var(--shadow)}
+.pill.mine{top:12px;right:12px;background:#F2D18C;color:#5A3E0E}
+body.has-choice{padding-bottom:132px}
+.choice{position:fixed;z-index:20;left:0;right:0;bottom:0;padding:0 16px max(16px,env(safe-area-inset-bottom))}
+.ch-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,3fr) auto;align-items:center;gap:18px;padding:14px 18px;border-radius:var(--r);background:var(--ink);color:var(--bg);box-shadow:0 12px 40px rgba(12,14,30,.35)}
+.ch-stay{display:flex;align-items:center;gap:12px;min-width:0}
+.ch-stay img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:none}
+.ch-stay div{min-width:0;display:grid}
+.ch-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.65}
+.ch-stay a{color:inherit;font-weight:600;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ch-stay a:hover{text-decoration:underline}
+.ch-nums{margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ch-nums dt{font-size:11px;opacity:.65}
+.ch-nums dd{margin:0;font-weight:700;font-size:16px;white-space:nowrap}
+.ch-nums .hl dd{color:#F2D18C;font-size:19px}
+.ch-act{display:grid;gap:6px;justify-items:end}
+.ch-act a{color:#F2D18C;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
+.ch-act button{font:600 12.5px var(--f-body);background:none;border:0;color:inherit;opacity:.7;cursor:pointer;padding:0;white-space:nowrap}
+.ch-act button:hover{opacity:1}
+@media (max-width:1040px){.ch-in{grid-template-columns:minmax(0,1fr) auto}.ch-nums{grid-column:1/-1;grid-row:2}}
+@media (max-width:620px){
+  body.has-choice{padding-bottom:210px}
+  .ch-in{gap:10px;padding:12px 14px}
+  .ch-nums{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px}
+  .ch-nums dd{font-size:14px}.ch-nums .hl dd{font-size:16px}
+}
+.mine-act{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13.5px}
+.mine-act button{font:600 13px var(--f-body);background:none;border:0;color:var(--muted);cursor:pointer;padding:0}
+.mine-act button:hover{color:var(--berry)}
+.kpi.hl-soft{box-shadow:0 0 0 2px var(--gold),var(--shadow)}
+.t-go{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
